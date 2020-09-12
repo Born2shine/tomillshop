@@ -233,9 +233,6 @@ button {
   outline: none;
 }
 /* ADS SECTION */
-.ads-section {
-  /* margin: 2rem 0; */
-}
 .ads-container {
   background: var(--clr-gray-dark);
   padding: 1rem;
