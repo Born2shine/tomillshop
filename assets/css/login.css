@@ -36,6 +36,9 @@
     --clr-light: #f8f9fa;
     --clr-light-2: #f6f8f9;
     --clr-dark: #343a40;
+    --clr-twitter: #1A91DA;
+    --clr-facebook: #1877F2;
+    --clr-gmail: #D93025;
     --breakpoint-xs: 0;
     --breakpoint-sm: 576px;
     --breakpoint-md: 768px;
@@ -47,6 +50,7 @@
     --radius: 0.3rem;
     --transition: all 1s ease;
 }
+
 /* General styling */
 a {
     text-decoration: none;
@@ -66,69 +70,87 @@ img {
     width: 90%;
     margin: 0 auto;
 }
-body{
+
+body {
     font-family: var(--font-family);
     font-size: 1rem;
     background: var(--clr-white);
 }
-.wrapper{
+
+.wrapper {
     display: flex;
     justify-items: center;
     justify-content: space-between;
     flex-direction: row;
 }
-.svg__image{
-   height: 100vh; 
+
+.svg__image {
+    height: 100vh;
 }
-.svg__section{
+
+.svg__section {
     width: 50%;
+    padding: 0 1rem;
 }
-.form-section{
+
+.form-section {
     background: var(--clr-dark);
     width: 40%;
-    padding: 6rem;
+    padding: 2rem 6rem;
 }
-.login__header{
-    padding: 2rem 0.5rem 0.8rem 0.5rem;
+
+.back__btn {
+    color: var(--clr-white);
+    font-size: 22px;
+    position: absolute;
+    top: 30px;
+}
+
+.login__header {
+    padding: 3.5rem 0.5rem 0.8rem 0.5rem;
     text-align: center;
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: var(--clr-white);
 }
+
 .login__subheader {
     font-size: 15px;
     text-align: center;
     padding: 0.5rem;
     color: var(--clr-white);
 }
-input{
+
+label {
+    display: block;
+    padding: 0.3rem 0;
+    color: var(--clr-white);
+}
+
+input {
     width: 100%;
     padding: 8px 28px;
     text-align: left;
     color: var(--clr-gray);
-    background: var(--clr-grey-dark-4);
+    background: var(--clr-dark);
     font-size: 15px;
     font-weight: 300;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
-    margin-bottom: 14px;
-    /* border-top: none;
-    border-right: none;
-    border-left: none;
-    border-bottom: 2px; */
+    margin-bottom: 0.875rem;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    border-bottom: 1px solid #e3e3e3;
+    outline: 0;
+}
 
-}
-label{
-    display: block;
-    padding: 0.4rem 0;
-    color: var(--clr-white);
-}
-.login__btn{
+.btn {
     border-radius: var(--radius);
     border: 0;
-    padding: 8px 28px;
+    padding: 8px 30px;
     background-color: var(--clr-brown);
     color: var(--clr-white);
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 700;
     text-decoration: none;
     cursor: pointer;
@@ -136,10 +158,51 @@ label{
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
-.register{
+
+.btn fa {
+    margin-right: 4px;
+}
+
+.register {
     float: right;
     padding: 0.5rem;
     color: var(--clr-white);
+}
+
+.signin__opts {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.signin__txt {
+    padding: 0.6rem;
+}
+
+.signin__opts>p {
+    color: var(--clr-white);
+}
+
+.signin__btns {
+    display: flex;
+    flex-direction: column;
+}
+
+.gmail__btn {
+    background: var(--clr-gmail);
+    margin-bottom: 0.5rem;
+    padding: 12px;
+}
+
+.facebook__btn {
+    background: var(--clr-facebook);
+    margin-bottom: 0.5rem;
+    padding: 12px;
+}
+
+.twitter__btn {
+    background: var(--clr-twitter);
+    margin-bottom: 0.5rem;
+    padding: 12px;
 }
 
 @media(max-width: 858px) {
@@ -147,36 +210,46 @@ label{
         display: none;
     }
 
+    .form-section {
+        background: var(--clr-dark);
+        width: 100%;
+        padding: 2rem 3rem;
+    }
+
     .login__form {
         display: flex;
         font-size: 1rem;
         line-height: 1.5;
         flex-direction: column;
-        padding: 1.2rem;
+        padding: 1rem 1.2rem;
+    }
+    .login__head{
+        padding-top: 1.5rem;
     }
 
     label {
         display: block;
     }
 
-    
     input {
         width: 100%;
         padding: 8px 28px;
         text-align: left;
-        border: 0;
         color: var(--clr-gray);
-        background: var(--clr-grey-dark-4);
-        outline: 0;
+        background: var(--clr-dark);
         font-size: 15px;
         font-weight: 300;
         -webkit-transition: all 0.3s ease;
         transition: all 0.3s ease;
-        margin-bottom: 14px;
-        border-radius: var(--radius);
-
+        margin-bottom: 0.875rem;
+        border-left: 0;
+        border-right: 0;
+        border-top: 0;
+        border-bottom: 1px solid #e3e3e3;
+        outline: 0;
     }
-    .login__btn{
+
+    .login__btn {
         border-radius: var(--radius);
         border: 0;
         padding: 8px 28px;
@@ -191,7 +264,7 @@ label{
         transition: all 0.3s ease;
     }
 
-    label{
+    label {
         display: block;
     }
 }
