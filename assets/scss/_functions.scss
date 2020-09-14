@@ -18,3 +18,20 @@
   width: $width;
   margin: 0 auto;
 }
+
+@mixin doubleUnderline($bg) {
+  &::before {
+    @include absolute(50%, null, null, -0.4rem, (-50%, -50%));
+    content: "";
+    width: 4rem;
+    height: 0.12rem;
+    background: $bg;
+  }
+  &::after {
+    @include absolute(50%, null, null, -0.9rem, (-50%, -50%));
+    content: "";
+    width: 2rem;
+    height: 0.12rem;
+    background: $bg;
+  }
+}

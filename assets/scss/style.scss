@@ -191,15 +191,58 @@ header {
     }
   }
 }
+// Popular Categories
+.popular-categories {
+  background: $clr-grey-dark-2;
+  margin-bottom: 2rem;
+  .popular {
+    padding: 1rem;
+    h3 {
+      text-align: center;
+      margin-top: 1rem;
+      color: $clr-grey-dark-4;
+      font-size: 1.3rem;
+      position: relative;
+      @include doubleUnderline($clr-grey-dark-4);
+    }
+    ul {
+      margin: 1rem 0;
+      @include displayGrid(null, 1fr 1fr 1fr, 1fr 1fr, null);
+      place-items: center;
+      .popular-icon {
+        display: block;
+        padding: 1rem;
+        text-align: center;
+        .popular-text {
+          display: block;
+          color: $clr-grey-dark-4;
+          font-size: 0.9rem;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+        i {
+          color: $clr-grey-dark-4;
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+}
+
 /* ADS SECTION */
 .ads-section {
   .ads-container {
-    background: $clr-gray-dark;
+    // background: $clr-gray-dark;
     padding: 1rem;
     h2 {
       font-size: 1.2rem;
       font-weight: 600;
-      color: $clr-grey-dark-4;
+      color: $clr-brown;
+      margin-bottom: 1rem;
+      text-align: center;
+      position: relative;
+      @include doubleUnderline($clr-brown);
     }
   }
   .ads {
@@ -312,8 +355,10 @@ header {
     text-align: center;
     color: $clr-brown;
     h2 {
+      position: relative;
       font-size: 1.5rem;
-      margin: 0.5rem 0;
+      margin-bottom: 2rem;
+      @include doubleUnderline($clr-brown);
     }
     p {
       font-size: 0.9rem;
@@ -353,6 +398,7 @@ header {
 }
 // Become A Seller
 .become-a-seller {
+  margin: 2rem 0;
   .sell-now {
     text-align: center;
     background: $clr-grey-dark-2;
