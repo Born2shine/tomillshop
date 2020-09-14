@@ -90,13 +90,13 @@ body {
 
 .svg__section {
     width: 50%;
-    padding: 0 2rem;
+    padding: 0 1rem;
 }
 
 .form-section {
     background: var(--clr-dark);
     width: 40%;
-    padding: 5rem 6rem;
+    padding: 2rem 6rem;
 }
 
 .back__btn {
@@ -107,9 +107,9 @@ body {
 }
 
 .login__header {
-    padding: 1.5rem 0.5rem 0.8rem 0.5rem;
+    padding: 3.5rem 0.5rem 0.8rem 0.5rem;
     text-align: center;
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: var(--clr-white);
 }
 
