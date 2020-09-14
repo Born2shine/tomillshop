@@ -1,0 +1,20 @@
+@mixin displayGrid($width, $column, $row, $gap) {
+  width: $width;
+  display: grid;
+  grid-template-columns: $column;
+  grid-template-rows: $row;
+  gap: $gap;
+}
+@mixin absolute($left, $right, $top, $bottom, $translate) {
+  position: absolute;
+  left: $left;
+  right: $right;
+  top: $top;
+  bottom: $bottom;
+  transform: translate($translate);
+}
+
+@mixin boxCenter($width) {
+  width: $width;
+  margin: 0 auto;
+}

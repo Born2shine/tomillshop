@@ -15,6 +15,7 @@
   --clr-orange: #fd7e14;
   --clr-yellow: #ffc107;
   --clr-green: #28a745;
+  --clr-green-2: #46ea6b;
   --clr-teal: #20c997;
   --clr-cyan: #17a2b8;
   --clr-white: #fff;
@@ -262,6 +263,7 @@ button:focus {
   box-shadow: var(--box-shadow);
   padding: 0.5rem;
   margin: 1rem 0;
+  position: relative;
 }
 
 .ad-image {
@@ -336,6 +338,15 @@ button:focus {
   display: inline-block;
   font-size: 0.75rem;
   color: var(--clr-brown);
+}
+.ad-promoted {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 0.8rem;
+  color: var(--clr-green-2);
+  background: var(--clr-dark);
+  padding: 0.2rem 0.5rem;
 }
 /* Why Choose Us */
 .why-choose-us {

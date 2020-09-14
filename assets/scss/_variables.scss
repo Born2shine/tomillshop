@@ -1,0 +1,70 @@
+$clr-blue: #007bff;
+$clr-indigo: #6610f2;
+$clr-purple: #6f42c1;
+$clr-pink: #e83e8c;
+$clr-red: #dc3545;
+$clr-brown: #e05b3d;
+$clr-brown-off: #92584c;
+$clr-orange: #fd7e14;
+$clr-yellow: #ffc107;
+$clr-green: #28a745;
+$clr-green-2: #46ea6b;
+$clr-teal: #20c997;
+$clr-cyan: #17a2b8;
+$clr-white: #fff;
+$clr-gray: #6c757d;
+$clr-gray-dark: #343a40;
+$clr-grey-darker: #4a4b4c;
+$clr-grey-dark-2: #49535d;
+$clr-grey-dark-3: #979696;
+$clr-grey-dark-4: #b5b8bb;
+
+$clr-primary: #007bff;
+$clr-secondary: #6c757d;
+$clr-success: #28a745;
+$clr-info: #17a2b8;
+$clr-warning: #ffc107;
+$clr-danger: #dc3545;
+$clr-light: #f8f9fa;
+$clr-light-2: #f6f8f9;
+$clr-dark: #343a40;
+$breakpoint-xs: 0;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$font-family: "Nunito", sans-serif;
+$spacing: 0.3rem;
+$box-shadow: 0 10px 30px rgba(51, 51, 51, 0.1);
+$radius: 0.3rem;
+$transition: all 1s ease;
+
+// margins
+$mt-1: 1rem;
+
+// paddings
+$pt-1: 1rem;
+
+// font sizes
+$f-size-07: 0.7rem;
+$f-size-08: 0.8rem;
+$f-size-09: 0.9rem;
+$f-size-075: 0.75rem;
+$f-size-085: 0.85rem;
+$f-size-095: 0.95rem;
+$f-size-1: 1rem;
+$f-size-2: 2rem;
+$f-size-3: 3rem;
+
+// buttons
+@mixin btn {
+  padding: 1rem;
+  border-radius: $radius;
+  border: none;
+  cursor: pointer;
+  transition: $transition;
+  font-family: $font-family;
+  &:focus {
+    outline: none;
+  }
+}

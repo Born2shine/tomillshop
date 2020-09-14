@@ -1,0 +1,372 @@
+@import "./fonts";
+@import "./variables";
+@import "./functions";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* General styling */
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+li {
+  list-style: none;
+}
+img {
+  width: 100%;
+  display: block;
+}
+
+body {
+  font-family: $font-family;
+  font-size: $f-size-1;
+  background: $clr-white;
+}
+/* Navbar */
+.navbar {
+  background: $clr-dark;
+  color: $clr-white;
+  @include displayGrid(null, 1fr 2fr, null, null);
+  padding: 1rem;
+}
+.left-navs {
+  background: $clr-white;
+  @include absolute(0, null, 0, null, null);
+  width: 70%;
+  min-height: 100vh;
+  z-index: 2;
+  color: $clr-dark;
+  padding: 1rem;
+  display: none;
+}
+.side-navs {
+  margin-top: 1rem;
+
+  ul li {
+    padding: 0.8rem 1rem;
+    position: relative;
+  }
+  .s-link {
+    color: $clr-dark;
+    font-size: 1.3rem;
+  }
+
+  .has-children {
+    padding: 0 0.4rem;
+    position: absolute;
+    right: 0;
+    font-size: 1.1rem;
+    i {
+      transition: all 0.5s ease;
+    }
+  }
+}
+.close-side-nav {
+  text-align: right;
+  font-size: 1.5rem;
+}
+.rotate180 {
+  transition: all 0.5s ease;
+  transform: rotate(-180deg);
+}
+.toggle {
+  margin-top: 0.2rem;
+
+  .toggle-icon {
+    font-size: 1.5rem;
+  }
+}
+.navs {
+  ul {
+    li {
+      display: inline-block;
+      padding: 0 0rem;
+    }
+    .link {
+      color: $clr-light-2;
+    }
+  }
+}
+.links {
+  justify-self: end;
+}
+.seller-link {
+  background: $clr-grey-dark-2;
+  padding: 0.4rem 0.7rem;
+  border-radius: $radius;
+}
+/* Header */
+header {
+  min-height: 75vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("../images/hero_0.svg") center/cover no-repeat;
+  .hero {
+    padding-top: $pt-1;
+  }
+  .logo-icon {
+    font-size: 1.6rem;
+  }
+  .logo-text {
+    font-size: 1.2rem;
+    color: $clr-white;
+  }
+  .logo-filter {
+    @include displayGrid(null, auto 2fr, null, null);
+    padding: 1rem;
+    color: $clr-white;
+  }
+  .filter {
+    justify-self: end;
+  }
+  .filter-icon {
+    background: $clr-grey-dark-2;
+    padding: 0.4rem 0.7rem;
+    font-size: 1.25rem;
+    border-radius: $radius;
+  }
+  .filter-wrapper {
+    @include absolute(null, 0, 0, null, null);
+    width: 80vw;
+    background: $clr-light;
+    color: $clr-dark;
+    min-height: 100vh;
+    z-index: 1;
+    font-weight: normal;
+    display: none;
+  }
+  .show-filter {
+    transform: translate(0);
+    display: block;
+  }
+  .filter-box {
+    @include displayGrid(null, 1fr 2fr, null, null);
+    background: $clr-gray;
+    padding: 1rem;
+    color: $clr-white;
+  }
+  .close-filter-btn {
+    justify-self: end;
+    font-size: 1.5rem;
+  }
+  .search-ads {
+    @include absolute(50%, null, 50%, null, (-50%, -50%));
+    padding: 1rem;
+    color: $clr-light-2;
+    h1 {
+      font-size: 1.3rem;
+      margin-top: 1rem;
+      font-weight: 300;
+      display: none;
+    }
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 300;
+      margin: 0.5rem 0;
+    }
+  }
+  .search-text {
+    font-weight: 300;
+    margin: 1.5rem 0;
+    font-size: 1.2rem;
+    display: none;
+  }
+  //   .search-ads
+  .search-form {
+    input,
+    button {
+      width: 90vw;
+      font-size: 1rem;
+      @include btn();
+    }
+    button {
+      margin-top: 0.8rem;
+      background: $clr-brown;
+      color: $clr-white;
+      &:hover {
+        background: $clr-red;
+      }
+    }
+  }
+}
+/* ADS SECTION */
+.ads-section {
+  .ads-container {
+    background: $clr-gray-dark;
+    padding: 1rem;
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: $clr-grey-dark-4;
+    }
+  }
+  .ads {
+    padding: 0.4rem;
+    .single-ad {
+      @include displayGrid(null, 1fr 1fr, null, (0 0.5rem));
+      background: $clr-white;
+      box-shadow: $box-shadow;
+      padding: 0.5rem;
+      margin: 1rem 0;
+      position: relative;
+
+      .ad-image {
+        position: relative;
+        img {
+          height: 100%;
+          min-width: 10rem;
+          object-fit: cover;
+          border-radius: $radius;
+        }
+      }
+      .ad-verified {
+        @include absolute(null, 0, 0, null, null);
+        background: $clr-grey-dark-2;
+        padding: 0.3rem 0.5rem;
+        color: $clr-white;
+        font-size: $f-size-075;
+        border-radius: $radius;
+        i {
+          color: $clr-yellow;
+        }
+      }
+      .ad-for-rent-sale {
+        @include absolute(0, null, 0, null, null);
+        background: $clr-brown;
+        padding: 0.3rem 0.5rem;
+        color: $clr-white;
+        font-size: 0.75rem;
+        border-radius: $radius;
+      }
+      .ad-tabs li {
+        @include absolute(null, null, null, 0, null);
+        background: $clr-grey-dark-4;
+        padding: 0.1rem 0.5rem;
+        color: $clr-light;
+        font-size: 0.7rem;
+        border-radius: $radius;
+      }
+      .ad-image-count {
+        font-size: 0.7rem;
+      }
+      .ad-view {
+        right: 0;
+      }
+      .ad-info {
+        color: $clr-gray;
+      }
+      .ad-category {
+        color: $clr-brown;
+        font-size: 1rem;
+      }
+      .ad-title {
+        font-size: 0.9rem;
+        margin: 0.5rem 0;
+      }
+      .ad-location {
+        font-size: 0.75rem;
+      }
+      .ad-price {
+        color: $clr-green;
+        font-size: 0.75rem;
+      }
+      .ad-sub-info {
+        margin: 0.5rem 0;
+        li {
+          display: inline-block;
+          font-size: 0.75rem;
+          color: $clr-brown;
+        }
+      }
+    }
+    .promoted {
+      background: $clr-dark;
+      .ad-promoted {
+        position: absolute;
+        right: 0;
+        top: 0;
+        font-size: 0.8rem;
+        color: $clr-green-2;
+        background: $clr-dark;
+        padding: 0.2rem 0.5rem;
+      }
+      .ad-info {
+        color: $clr-white;
+
+        .ad-price {
+          color: $clr-green-2;
+        }
+        .ad-sub-info {
+          color: $clr-white;
+        }
+      }
+    }
+  }
+}
+/* Why Choose Us */
+.why-choose-us {
+  margin: 2rem 0;
+  .section-title {
+    text-align: center;
+    color: $clr-brown;
+    h2 {
+      font-size: 1.5rem;
+      margin: 0.5rem 0;
+    }
+    p {
+      font-size: 0.9rem;
+      color: $clr-grey-dark-3;
+      width: 80%;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+  }
+  .single-choose-us {
+    background: $clr-white;
+    padding: 1rem;
+    margin: 1.5rem 1rem;
+    border-radius: $radius;
+    box-shadow: $box-shadow;
+  }
+  .why-choose-img {
+    display: grid;
+    place-items: center;
+    img {
+      width: 50%;
+    }
+  }
+  .why-choose-title {
+    text-align: center;
+    color: $clr-brown;
+    margin: 0.5rem 0;
+    font-size: 1.3rem;
+  }
+  .why-choose-description {
+    color: $clr-grey-dark-3;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+}
+// Become A Seller
+.become-a-seller {
+  .sell-now {
+    text-align: center;
+    background: $clr-grey-dark-2;
+    padding: 1rem;
+    h2 {
+      color: $clr-white;
+      margin-top: 1rem;
+      font-size: 1.3rem;
+    }
+    a {
+      @include btn();
+      background: $clr-brown;
+      color: $clr-white;
+      margin: 1rem 0;
+    }
+  }
+}

@@ -1,0 +1,493 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* General styling */
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  font-size: 1rem;
+  background: #fff;
+}
+
+/* Navbar */
+.navbar {
+  background: #343a40;
+  color: #fff;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 2fr;
+      grid-template-columns: 1fr 2fr;
+  padding: 1rem;
+}
+
+.left-navs {
+  background: #fff;
+  position: absolute;
+  left: 0;
+  top: 0;
+  -webkit-transform: translate();
+          transform: translate();
+  width: 70%;
+  min-height: 100vh;
+  z-index: 2;
+  color: #343a40;
+  padding: 1rem;
+  display: none;
+}
+
+.side-navs {
+  margin-top: 1rem;
+}
+
+.side-navs ul li {
+  padding: 0.8rem 1rem;
+  position: relative;
+}
+
+.side-navs .s-link {
+  color: #343a40;
+  font-size: 1.3rem;
+}
+
+.side-navs .has-children {
+  padding: 0 0.4rem;
+  position: absolute;
+  right: 0;
+  font-size: 1.1rem;
+}
+
+.side-navs .has-children i {
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.close-side-nav {
+  text-align: right;
+  font-size: 1.5rem;
+}
+
+.rotate180 {
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+}
+
+.toggle {
+  margin-top: 0.2rem;
+}
+
+.toggle .toggle-icon {
+  font-size: 1.5rem;
+}
+
+.navs ul li {
+  display: inline-block;
+  padding: 0 0rem;
+}
+
+.navs ul .link {
+  color: #f6f8f9;
+}
+
+.links {
+  -ms-grid-column-align: end;
+      justify-self: end;
+}
+
+.seller-link {
+  background: #49535d;
+  padding: 0.4rem 0.7rem;
+  border-radius: 0.3rem;
+}
+
+/* Header */
+header {
+  min-height: 75vh;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), url("../images/hero_0.svg") center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../images/hero_0.svg") center/cover no-repeat;
+}
+
+header .hero {
+  padding-top: 1rem;
+}
+
+header .logo-icon {
+  font-size: 1.6rem;
+}
+
+header .logo-text {
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+header .logo-filter {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 2fr;
+      grid-template-columns: auto 2fr;
+  padding: 1rem;
+  color: #fff;
+}
+
+header .filter {
+  -ms-grid-column-align: end;
+      justify-self: end;
+}
+
+header .filter-icon {
+  background: #49535d;
+  padding: 0.4rem 0.7rem;
+  font-size: 1.25rem;
+  border-radius: 0.3rem;
+}
+
+header .filter-wrapper {
+  position: absolute;
+  right: 0;
+  top: 0;
+  -webkit-transform: translate();
+          transform: translate();
+  width: 80vw;
+  background: #f8f9fa;
+  color: #343a40;
+  min-height: 100vh;
+  z-index: 1;
+  font-weight: normal;
+  display: none;
+}
+
+header .show-filter {
+  -webkit-transform: translate(0);
+          transform: translate(0);
+  display: block;
+}
+
+header .filter-box {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 2fr;
+      grid-template-columns: 1fr 2fr;
+  background: #6c757d;
+  padding: 1rem;
+  color: #fff;
+}
+
+header .close-filter-btn {
+  -ms-grid-column-align: end;
+      justify-self: end;
+  font-size: 1.5rem;
+}
+
+header .search-ads {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  padding: 1rem;
+  color: #f6f8f9;
+}
+
+header .search-ads h1 {
+  font-size: 1.3rem;
+  margin-top: 1rem;
+  font-weight: 300;
+  display: none;
+}
+
+header .search-ads h2 {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin: 0.5rem 0;
+}
+
+header .search-text {
+  font-weight: 300;
+  margin: 1.5rem 0;
+  font-size: 1.2rem;
+  display: none;
+}
+
+header .search-form input,
+header .search-form button {
+  width: 90vw;
+  font-size: 1rem;
+  padding: 1rem;
+  border-radius: 0.3rem;
+  border: none;
+  cursor: pointer;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+  font-family: "Nunito", sans-serif;
+}
+
+header .search-form input:focus,
+header .search-form button:focus {
+  outline: none;
+}
+
+header .search-form button {
+  margin-top: 0.8rem;
+  background: #e05b3d;
+  color: #fff;
+}
+
+header .search-form button:hover {
+  background: #dc3545;
+}
+
+/* ADS SECTION */
+.ads-section .ads-container {
+  background: #343a40;
+  padding: 1rem;
+}
+
+.ads-section .ads-container h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #b5b8bb;
+}
+
+.ads-section .ads {
+  padding: 0.4rem;
+}
+
+.ads-section .ads .single-ad {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  gap: 0 0.5rem;
+  background: #fff;
+  -webkit-box-shadow: 0 10px 30px rgba(51, 51, 51, 0.1);
+          box-shadow: 0 10px 30px rgba(51, 51, 51, 0.1);
+  padding: 0.5rem;
+  margin: 1rem 0;
+  position: relative;
+}
+
+.ads-section .ads .single-ad .ad-image {
+  position: relative;
+}
+
+.ads-section .ads .single-ad .ad-image img {
+  height: 100%;
+  min-width: 10rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 0.3rem;
+}
+
+.ads-section .ads .single-ad .ad-verified {
+  position: absolute;
+  right: 0;
+  top: 0;
+  -webkit-transform: translate();
+          transform: translate();
+  background: #49535d;
+  padding: 0.3rem 0.5rem;
+  color: #fff;
+  font-size: 0.75rem;
+  border-radius: 0.3rem;
+}
+
+.ads-section .ads .single-ad .ad-verified i {
+  color: #ffc107;
+}
+
+.ads-section .ads .single-ad .ad-for-rent-sale {
+  position: absolute;
+  left: 0;
+  top: 0;
+  -webkit-transform: translate();
+          transform: translate();
+  background: #e05b3d;
+  padding: 0.3rem 0.5rem;
+  color: #fff;
+  font-size: 0.75rem;
+  border-radius: 0.3rem;
+}
+
+.ads-section .ads .single-ad .ad-tabs li {
+  position: absolute;
+  bottom: 0;
+  -webkit-transform: translate();
+          transform: translate();
+  background: #b5b8bb;
+  padding: 0.1rem 0.5rem;
+  color: #f8f9fa;
+  font-size: 0.7rem;
+  border-radius: 0.3rem;
+}
+
+.ads-section .ads .single-ad .ad-image-count {
+  font-size: 0.7rem;
+}
+
+.ads-section .ads .single-ad .ad-view {
+  right: 0;
+}
+
+.ads-section .ads .single-ad .ad-info {
+  color: #6c757d;
+}
+
+.ads-section .ads .single-ad .ad-category {
+  color: #e05b3d;
+  font-size: 1rem;
+}
+
+.ads-section .ads .single-ad .ad-title {
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+}
+
+.ads-section .ads .single-ad .ad-location {
+  font-size: 0.75rem;
+}
+
+.ads-section .ads .single-ad .ad-price {
+  color: #28a745;
+  font-size: 0.75rem;
+}
+
+.ads-section .ads .single-ad .ad-sub-info {
+  margin: 0.5rem 0;
+}
+
+.ads-section .ads .single-ad .ad-sub-info li {
+  display: inline-block;
+  font-size: 0.75rem;
+  color: #e05b3d;
+}
+
+.ads-section .ads .promoted {
+  background: #343a40;
+}
+
+.ads-section .ads .promoted .ad-promoted {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 0.8rem;
+  color: #46ea6b;
+  background: #343a40;
+  padding: 0.2rem 0.5rem;
+}
+
+.ads-section .ads .promoted .ad-info {
+  color: #fff;
+}
+
+.ads-section .ads .promoted .ad-info .ad-price {
+  color: #46ea6b;
+}
+
+.ads-section .ads .promoted .ad-info .ad-sub-info {
+  color: #fff;
+}
+
+/* Why Choose Us */
+.why-choose-us {
+  margin: 2rem 0;
+}
+
+.why-choose-us .section-title {
+  text-align: center;
+  color: #e05b3d;
+}
+
+.why-choose-us .section-title h2 {
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+.why-choose-us .section-title p {
+  font-size: 0.9rem;
+  color: #979696;
+  width: 80%;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.why-choose-us .single-choose-us {
+  background: #fff;
+  padding: 1rem;
+  margin: 1.5rem 1rem;
+  border-radius: 0.3rem;
+  -webkit-box-shadow: 0 10px 30px rgba(51, 51, 51, 0.1);
+          box-shadow: 0 10px 30px rgba(51, 51, 51, 0.1);
+}
+
+.why-choose-us .why-choose-img {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+.why-choose-us .why-choose-img img {
+  width: 50%;
+}
+
+.why-choose-us .why-choose-title {
+  text-align: center;
+  color: #e05b3d;
+  margin: 0.5rem 0;
+  font-size: 1.3rem;
+}
+
+.why-choose-us .why-choose-description {
+  color: #979696;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.become-a-seller .sell-now {
+  text-align: center;
+  background: #49535d;
+  padding: 1rem;
+}
+
+.become-a-seller .sell-now h2 {
+  color: #fff;
+  margin-top: 1rem;
+  font-size: 1.3rem;
+}
+
+.become-a-seller .sell-now a {
+  padding: 1rem;
+  border-radius: 0.3rem;
+  border: none;
+  cursor: pointer;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+  font-family: "Nunito", sans-serif;
+  background: #e05b3d;
+  color: #fff;
+  margin: 1rem 0;
+}
+
+.become-a-seller .sell-now a:focus {
+  outline: none;
+}
