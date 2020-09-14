@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --clr-blue: #007bff;
+    --clr-indigo: #6610f2;
+    --clr-purple: #6f42c1;
+    --clr-pink: #e83e8c;
+    --clr-red: #dc3545;
+    --clr-brown: #e05b3d;
+    --clr-brown-off: #92584c;
+    --clr-orange: #fd7e14;
+    --clr-yellow: #ffc107;
+    --clr-green: #28a745;
+    --clr-teal: #20c997;
+    --clr-cyan: #17a2b8;
+    --clr-white: #fff;
+    --clr-gray: #6c757d;
+    --clr-gray-dark: #343a40;
+    --clr-grey-darker: #4a4b4c;
+    --clr-grey-dark-2: #49535d;
+    --clr-grey-dark-3: #979696;
+    --clr-grey-dark-4: #b5b8bb;
+
+    --clr-primary: #007bff;
+    --clr-secondary: #6c757d;
+    --clr-success: #28a745;
+    --clr-info: #17a2b8;
+    --clr-warning: #ffc107;
+    --clr-danger: #dc3545;
+    --clr-light: #f8f9fa;
+    --clr-light-2: #f6f8f9;
+    --clr-dark: #343a40;
+    --breakpoint-xs: 0;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+    --font-family: "Nunito", sans-serif;
+    --spacing: 0.3rem;
+    --box-shadow: 0 10px 30px rgba(51, 51, 51, 0.1);
+    --radius: 0.3rem;
+    --transition: all 1s ease;
+}
+/* General styling */
+a {
+    text-decoration: none;
+    display: inline-block;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+.section-center {
+    width: 90%;
+    margin: 0 auto;
+}
+body{
+    font-family: var(--font-family);
+    font-size: 1rem;
+    background: var(--clr-white);
+}
+.wrapper{
+    display: flex;
+    justify-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.svg__image{
+   height: 100vh; 
+}
+.svg__section{
+    width: 50%;
+}
+.form-section{
+    background: var(--clr-dark);
+    width: 40%;
+    padding: 6rem;
+}
+.login__header{
+    padding: 2rem 0.5rem 0.8rem 0.5rem;
+    text-align: center;
+    font-size: 2rem;
+    color: var(--clr-white);
+}
+.login__subheader {
+    font-size: 15px;
+    text-align: center;
+    padding: 0.5rem;
+    color: var(--clr-white);
+}
+input{
+    width: 100%;
+    padding: 8px 28px;
+    text-align: left;
+    color: var(--clr-gray);
+    background: var(--clr-grey-dark-4);
+    font-size: 15px;
+    font-weight: 300;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    margin-bottom: 14px;
+    /* border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 2px; */
+
+}
+label{
+    display: block;
+    padding: 0.4rem 0;
+    color: var(--clr-white);
+}
+.login__btn{
+    border-radius: var(--radius);
+    border: 0;
+    padding: 8px 28px;
+    background-color: var(--clr-brown);
+    color: var(--clr-white);
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    outline: none;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.register{
+    float: right;
+    padding: 0.5rem;
+    color: var(--clr-white);
+}
+
+@media(max-width: 858px) {
+    .svg__section {
+        display: none;
+    }
+
+    .login__form {
+        display: flex;
+        font-size: 1rem;
+        line-height: 1.5;
+        flex-direction: column;
+        padding: 1.2rem;
+    }
+
+    label {
+        display: block;
+    }
+
+    
+    input {
+        width: 100%;
+        padding: 8px 28px;
+        text-align: left;
+        border: 0;
+        color: var(--clr-gray);
+        background: var(--clr-grey-dark-4);
+        outline: 0;
+        font-size: 15px;
+        font-weight: 300;
+        -webkit-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+        margin-bottom: 14px;
+        border-radius: var(--radius);
+
+    }
+    .login__btn{
+        border-radius: var(--radius);
+        border: 0;
+        padding: 8px 28px;
+        background-color: var(--clr-brown);
+        color: var(--clr-white);
+        font-size: 14px;
+        font-weight: 700;
+        text-decoration: none;
+        cursor: pointer;
+        outline: none;
+        -webkit-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+    }
+
+    label{
+        display: block;
+    }
+}
