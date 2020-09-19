@@ -31,10 +31,12 @@ body {
 .navbar {
   background: #343a40;
   color: #fff;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 2fr;
-      grid-template-columns: 1fr 2fr;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding: 1rem;
 }
 
@@ -109,8 +111,9 @@ body {
 }
 
 .links {
-  -ms-grid-column-align: end;
-      justify-self: end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .seller-link {
@@ -587,10 +590,6 @@ header .search-form button:hover {
   margin-bottom: 2rem;
 }
 
-.become-a-seller {
-  margin: 2rem 0;
-}
-
 .become-a-seller .sell-now {
   text-align: center;
   background: #49535d;
@@ -618,4 +617,185 @@ header .search-form button:hover {
 
 .become-a-seller .sell-now a:focus {
   outline: none;
+}
+
+.testimonial-section {
+  background: url("../images/patterns/1.png");
+}
+
+.testimonial-section .testimonial-wrapper {
+  margin-top: 3rem;
+}
+
+.testimonial-section .testimonials {
+  padding: 1rem;
+}
+
+.testimonial-section .testimonials h2 {
+  text-align: center;
+  margin-top: 1rem;
+  position: relative;
+  color: #e05b3d;
+}
+
+.testimonial-section .testimonials h2::before {
+  position: absolute;
+  left: 50%;
+  bottom: -0.4rem;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  content: "";
+  width: 4rem;
+  height: 0.12rem;
+  background: #e05b3d;
+}
+
+.testimonial-section .testimonials h2::after {
+  position: absolute;
+  left: 50%;
+  bottom: -0.9rem;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  content: "";
+  width: 2rem;
+  height: 0.12rem;
+  background: #e05b3d;
+}
+
+.testimonial-section .testimonials .single-testimonial {
+  max-width: 95%;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  color: #979696;
+  position: relative;
+  font-size: 0.9rem;
+  padding: 1rem;
+  background: #fff;
+  -webkit-box-shadow: 0 10px 30px rgba(51, 51, 51, 0.1);
+          box-shadow: 0 10px 30px rgba(51, 51, 51, 0.1);
+  margin-top: 2.2rem;
+}
+
+.testimonial-section .testimonials .single-testimonial h3 {
+  text-align: center;
+  font-weight: 300;
+  color: #e05b3d;
+}
+
+.testimonial-section .testimonials .single-testimonial .testimonial-img {
+  width: 20%;
+  position: absolute;
+  background: #6c757d;
+  border-radius: 50%;
+  left: 50%;
+  top: -18%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+}
+
+.testimonial-section .testimonials .single-testimonial .testimonial-img img {
+  border-radius: 50%;
+}
+
+.testimonial-section .testimonials .single-testimonial .testimonial-by {
+  margin-top: 2.5rem;
+  font-size: 0.95rem;
+}
+
+.testimonial-section .testimonials .single-testimonial .testimonial {
+  margin-top: 0.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.footer-section {
+  background: #49535d;
+  color: #b5b8bb;
+}
+
+.footer-section .footer-wrapper {
+  padding: 1rem;
+}
+
+.footer-section .footer-wrapper article {
+  margin: 2rem 0;
+}
+
+.footer-section .footer-wrapper article h2 {
+  color: #f5f6f7;
+  font-size: 1.2rem;
+  margin: 0.75rem 0;
+}
+
+.footer-section .footer-wrapper .about-us .about {
+  line-height: 1.6;
+  font-size: 0.9rem;
+}
+
+.footer-section .footer-wrapper .quick-links .links ul li {
+  padding: 0.2rem 0;
+}
+
+.footer-section .footer-wrapper .quick-links .links ul li a {
+  color: #b5b8bb;
+  font-size: 0.9rem;
+}
+
+.footer-section .footer-wrapper .contact-us .email,
+.footer-section .footer-wrapper .contact-us .address,
+.footer-section .footer-wrapper .contact-us .phone {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.footer-section .footer-wrapper .contact-us .phone {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.3rem;
+}
+
+.footer-section .footer-wrapper .social-links .links a {
+  color: #49535d;
+  background: #b5b8bb;
+  border-radius: 50%;
+  padding: 0.4rem 0.75rem;
+  margin: 0 0.1rem;
+  font-size: 1rem;
+}
+
+.footer-section .footer-wrapper .subscribe .subscription-form input,
+.footer-section .footer-wrapper .subscribe .subscription-form button {
+  padding: 0.8rem;
+  font-family: "Nunito", sans-serif;
+  font-size: 1rem;
+  border: none;
+  color: #f6f8f9;
+  border-radius: 0.3rem;
+}
+
+.footer-section .footer-wrapper .subscribe .subscription-form input:focus,
+.footer-section .footer-wrapper .subscribe .subscription-form button:focus {
+  outline: none;
+}
+
+.footer-section .footer-wrapper .subscribe .subscription-form input {
+  width: 80%;
+  background: #f6f8f9;
+  color: #49535d;
+}
+
+.footer-section .footer-wrapper .subscribe .subscription-form button {
+  width: 15%;
+  background: #e05b3d;
+}
+
+.footer-section .hr {
+  height: 1px;
+  border: none;
+  background: #60676d;
+}
+
+.footer-section .copyright {
+  text-align: center;
+  padding: 2rem 0;
 }

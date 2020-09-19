@@ -5,6 +5,11 @@
   grid-template-rows: $row;
   gap: $gap;
 }
+@mixin displayFlex($width) {
+  width: $width;
+  display: flex;
+  justify-content: space-between;
+}
 @mixin absolute($left, $right, $top, $bottom, $translate) {
   position: absolute;
   left: $left;
@@ -34,4 +39,9 @@
     height: 0.12rem;
     background: $bg;
   }
+}
+@mixin line-divider($bg) {
+  height: 1px;
+  border: none;
+  background: $bg;
 }

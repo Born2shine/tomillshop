@@ -29,7 +29,8 @@ body {
 .navbar {
   background: $clr-dark;
   color: $clr-white;
-  @include displayGrid(null, 1fr 2fr, null, null);
+  //   @include displayGrid(null, 1fr 2fr, null, null);
+  @include displayFlex(null);
   padding: 1rem;
 }
 .left-navs {
@@ -91,7 +92,7 @@ body {
   }
 }
 .links {
-  justify-self: end;
+  justify-content: flex-end;
 }
 .seller-link {
   background: $clr-grey-dark-2;
@@ -398,7 +399,7 @@ header {
 }
 // Become A Seller
 .become-a-seller {
-  margin: 2rem 0;
+  //   margin: 2rem 0;
   .sell-now {
     text-align: center;
     background: $clr-grey-dark-2;
@@ -414,5 +415,150 @@ header {
       color: $clr-white;
       margin: 1rem 0;
     }
+  }
+}
+// Testimonials
+.testimonial-section {
+  background: url("../images/patterns/1.png");
+  .testimonial-wrapper {
+    margin-top: 3rem;
+  }
+  .testimonials {
+    padding: 1rem;
+    h2 {
+      text-align: center;
+      margin-top: 1rem;
+      position: relative;
+      color: $clr-brown;
+      @include doubleUnderline($clr-brown);
+    }
+    .single-testimonial {
+      max-width: 95%;
+      margin: 0 auto;
+      margin-bottom: 1rem;
+      color: $clr-grey-dark-3;
+      h3 {
+        text-align: center;
+        font-weight: 300;
+        color: $clr-brown;
+      }
+      position: relative;
+      font-size: 0.9rem;
+      padding: 1rem;
+      background: $clr-white;
+      box-shadow: $box-shadow;
+      margin-top: 2.2rem;
+      .testimonial-img {
+        width: 20%;
+        position: absolute;
+        background: $clr-gray;
+        border-radius: $radius-circle;
+        left: 50%;
+        top: -18%;
+        transform: translate(-50%);
+        img {
+          border-radius: $radius-circle;
+        }
+      }
+      .testimonial-by {
+        margin-top: 2.5rem;
+        font-size: 0.95rem;
+      }
+      .testimonial {
+        margin-top: 0.5rem;
+        margin-bottom: 1.2rem;
+      }
+    }
+  }
+}
+// Footer Section
+.footer-section {
+  background: $clr-grey-dark-2;
+  color: $clr-grey-dark-4;
+  .footer-wrapper {
+    padding: 1rem;
+    article {
+      margin: 2rem 0;
+      h2 {
+        color: $clr-light-4;
+        font-size: 1.2rem;
+        margin: 0.75rem 0;
+      }
+    }
+    .about-us {
+      .about {
+        line-height: 1.6;
+        font-size: 0.9rem;
+      }
+    }
+    .quick-links {
+      .links {
+        ul {
+          li {
+            padding: 0.2rem 0;
+            a {
+              color: $clr-grey-dark-4;
+              font-size: 0.9rem;
+            }
+          }
+        }
+      }
+    }
+    .contact-us {
+      .email,
+      .address,
+      .phone {
+        margin: 0.5rem 0;
+        font-size: 0.9rem;
+      }
+      .phone {
+        display: flex;
+        gap: 0.3rem;
+      }
+    }
+    .social-links {
+      .links {
+        a {
+          color: $clr-grey-dark-2;
+          background: $clr-grey-dark-4;
+          border-radius: $radius-circle;
+          padding: 0.4rem 0.75rem;
+          margin: 0 0.1rem;
+          font-size: 1rem;
+        }
+      }
+    }
+    .subscribe {
+      .subscription-form {
+        input,
+        button {
+          padding: 0.8rem;
+          font-family: $font-family;
+          font-size: 1rem;
+          border: none;
+          color: $clr-light-2;
+          border-radius: $radius;
+          &:focus {
+            outline: none;
+          }
+        }
+        input {
+          width: 80%;
+          background: $clr-light-2;
+          color: $clr-grey-dark-2;
+        }
+        button {
+          width: 15%;
+          background: $clr-brown;
+        }
+      }
+    }
+  }
+  .hr {
+    @include line-divider($clr-grey-dark-8);
+  }
+  .copyright {
+    text-align: center;
+    padding: 2rem 0;
   }
 }
