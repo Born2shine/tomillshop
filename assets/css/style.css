@@ -357,6 +357,10 @@ header .search-form button:focus {
   padding: 1rem;
 }
 
+.ads-wrapper .ads-section .ads-container span {
+  display: none;
+}
+
 .ads-wrapper .ads-section .ads-container h2 {
   font-size: 1.2rem;
   font-weight: 600;
@@ -984,6 +988,9 @@ header .search-form button:focus {
   .navbar .toggle .left-navs {
     width: 40%;
     z-index: 4;
+  }
+  .ads-wrapper .ads-section .ads-container span {
+    display: initial;
   }
   .ads-wrapper .ads-section .ads {
     width: 90%;

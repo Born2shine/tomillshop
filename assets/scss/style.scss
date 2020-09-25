@@ -260,6 +260,9 @@ header {
     .ads-container {
       // background: $clr-gray-dark;
       padding: 1rem;
+      span {
+        display: none;
+      }
       h2 {
         font-size: 1.2rem;
         font-weight: 600;
@@ -762,6 +765,11 @@ header {
   }
   .ads-wrapper {
     .ads-section {
+      .ads-container {
+        span {
+          display: initial;
+        }
+      }
       .ads {
         @include boxCenter(90%);
         @include displayGrid(null, 1fr 1fr, null, 1rem);
