@@ -19,11 +19,14 @@ img {
   width: 100%;
   display: block;
 }
-
+.is-desktop {
+  display: none;
+}
 body {
   font-family: $font-family;
   font-size: $f-size-1;
   background: $clr-white;
+  text-size-adjust: none;
 }
 /* Navbar */
 .navbar {
@@ -41,27 +44,40 @@ body {
   z-index: 2;
   color: $clr-dark;
   padding: 1rem;
+  position: fixed;
   display: none;
 }
 .side-navs {
   margin-top: 1rem;
 
-  ul li {
-    padding: 0.8rem 1rem;
-    position: relative;
+  ul {
+    li {
+      padding: 0.6rem 1rem;
+      position: relative;
+    }
+    .children {
+      padding-top: 0.8rem;
+      display: none;
+      li {
+        padding: 0.4rem 1.5rem;
+      }
+    }
   }
+
   .s-link {
     color: $clr-dark;
     font-size: 1.3rem;
   }
 
   .has-children {
-    padding: 0 0.4rem;
-    position: absolute;
-    right: 0;
-    font-size: 1.1rem;
-    i {
-      transition: all 0.5s ease;
+    .has-children-icon {
+      padding: 0 0.4rem;
+      position: absolute;
+      right: 0;
+      font-size: 1.1rem;
+      i {
+        transition: all 0.5s ease;
+      }
     }
   }
 }
@@ -103,7 +119,7 @@ body {
 header {
   min-height: 75vh;
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url("../images/hero_0.svg") center/cover no-repeat;
+    url("../images/back_hero.jpg") center/cover no-repeat;
   .hero {
     padding-top: $pt-1;
   }
@@ -134,8 +150,9 @@ header {
     background: $clr-light;
     color: $clr-dark;
     min-height: 100vh;
-    z-index: 1;
+    z-index: 2;
     font-weight: normal;
+    position: fixed;
     display: none;
   }
   .show-filter {
@@ -180,21 +197,26 @@ header {
     button {
       width: 90vw;
       font-size: 1rem;
-      @include btn();
+      @include btn(null, null, null);
     }
     button {
       margin-top: 0.8rem;
       background: $clr-brown;
       color: $clr-white;
+      transition: $transition;
+      cursor: pointer;
       &:hover {
-        background: $clr-red;
+        background: $clr-brown-light;
+      }
+      &:focus {
+        outline: none;
       }
     }
   }
 }
 // Popular Categories
 .popular-categories {
-  background: $clr-grey-dark-2;
+  background: $clr-dark;
   margin-bottom: 2rem;
   .popular {
     padding: 1rem;
@@ -232,124 +254,140 @@ header {
 }
 
 /* ADS SECTION */
-.ads-section {
-  .ads-container {
-    // background: $clr-gray-dark;
-    padding: 1rem;
-    h2 {
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: $clr-brown;
-      margin-bottom: 1rem;
-      text-align: center;
-      position: relative;
-      @include doubleUnderline($clr-brown);
-    }
-  }
-  .ads {
-    padding: 0.4rem;
-    .single-ad {
-      @include displayGrid(null, 1fr 1fr, null, (0 0.5rem));
-      background: $clr-white;
-      box-shadow: $box-shadow;
-      padding: 0.5rem;
-      margin: 1rem 0;
-      position: relative;
-
-      .ad-image {
+.ads-wrapper {
+  margin-bottom: 4rem;
+  .ads-section {
+    .ads-container {
+      // background: $clr-gray-dark;
+      padding: 1rem;
+      h2 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: $clr-brown;
+        margin-bottom: 1rem;
+        text-align: center;
         position: relative;
-        img {
-          height: 100%;
-          min-width: 10rem;
-          object-fit: cover;
+        @include doubleUnderline($clr-brown);
+      }
+    }
+    .ads {
+      padding: 0.4rem;
+      .single-ad {
+        .info {
+          @include displayGrid(null, 1fr 1fr, null, (0 0.5rem));
+        }
+        background: $clr-white;
+        box-shadow: $box-shadow;
+        padding: 0.5rem;
+        margin: 1rem 0;
+        position: relative;
+
+        .ad-image {
+          position: relative;
+          img {
+            height: 100%;
+            min-width: 10rem;
+            object-fit: cover;
+            border-radius: $radius;
+          }
+        }
+        .ad-verified {
+          @include absolute(null, 0, 0, null, null);
+          background: $clr-grey-dark-2;
+          padding: 0.3rem 0.5rem;
+          color: $clr-white;
+          font-size: $f-size-075;
+          border-radius: $radius;
+          i {
+            color: $clr-yellow;
+          }
+        }
+        .ad-for-rent-sale {
+          @include absolute(0, null, 0, null, null);
+          background: $clr-brown;
+          padding: 0.3rem 0.5rem;
+          color: $clr-white;
+          font-size: 0.75rem;
           border-radius: $radius;
         }
-      }
-      .ad-verified {
-        @include absolute(null, 0, 0, null, null);
-        background: $clr-grey-dark-2;
-        padding: 0.3rem 0.5rem;
-        color: $clr-white;
-        font-size: $f-size-075;
-        border-radius: $radius;
-        i {
-          color: $clr-yellow;
+        .ad-tabs li {
+          @include absolute(null, null, null, 0, null);
+          background: $clr-grey-dark-4;
+          padding: 0.1rem 0.5rem;
+          color: $clr-light;
+          font-size: 0.7rem;
+          border-radius: $radius;
+        }
+        .ad-image-count {
+          font-size: 0.7rem;
+        }
+        .ad-view {
+          right: 0;
+        }
+        .ad-info {
+          color: $clr-gray;
+        }
+        .ad-category {
+          color: $clr-brown;
+          font-size: 1rem;
+        }
+        .ad-title {
+          font-size: 0.9rem;
+          margin: 0.5rem 0;
+        }
+        .ad-location {
+          font-size: 0.75rem;
+        }
+        .ad-price {
+          color: $clr-green;
+          font-size: 0.75rem;
+        }
+        .ad-sub-info {
+          margin: 0.5rem 0;
+          li {
+            display: inline-block;
+            font-size: 0.75rem;
+            color: $clr-brown;
+          }
         }
       }
-      .ad-for-rent-sale {
-        @include absolute(0, null, 0, null, null);
-        background: $clr-brown;
-        padding: 0.3rem 0.5rem;
-        color: $clr-white;
-        font-size: 0.75rem;
-        border-radius: $radius;
-      }
-      .ad-tabs li {
-        @include absolute(null, null, null, 0, null);
-        background: $clr-grey-dark-4;
-        padding: 0.1rem 0.5rem;
-        color: $clr-light;
-        font-size: 0.7rem;
-        border-radius: $radius;
-      }
-      .ad-image-count {
-        font-size: 0.7rem;
-      }
-      .ad-view {
-        right: 0;
-      }
-      .ad-info {
-        color: $clr-gray;
-      }
-      .ad-category {
-        color: $clr-brown;
-        font-size: 1rem;
-      }
-      .ad-title {
-        font-size: 0.9rem;
-        margin: 0.5rem 0;
-      }
-      .ad-location {
-        font-size: 0.75rem;
-      }
-      .ad-price {
-        color: $clr-green;
-        font-size: 0.75rem;
-      }
-      .ad-sub-info {
-        margin: 0.5rem 0;
-        li {
-          display: inline-block;
-          font-size: 0.75rem;
-          color: $clr-brown;
+      .promoted {
+        background: $clr-dark;
+        .ad-promoted {
+          position: absolute;
+          right: 0;
+          top: 0;
+          font-size: 0.8rem;
+          color: $clr-green-2;
+          background: $clr-dark;
+          padding: 0.2rem 0.5rem;
+        }
+        .ad-info {
+          color: $clr-white;
+
+          .ad-price {
+            color: $clr-green-2;
+          }
+          .ad-sub-info {
+            color: $clr-white;
+          }
         }
       }
     }
-    .promoted {
-      background: $clr-dark;
-      .ad-promoted {
-        position: absolute;
-        right: 0;
-        top: 0;
-        font-size: 0.8rem;
-        color: $clr-green-2;
-        background: $clr-dark;
-        padding: 0.2rem 0.5rem;
-      }
-      .ad-info {
-        color: $clr-white;
-
-        .ad-price {
-          color: $clr-green-2;
-        }
-        .ad-sub-info {
-          color: $clr-white;
-        }
+    .show-more-ads {
+      text-align: center;
+      a {
+        @include btn($clr-brown, $clr-white, 0.9rem);
+        padding: 0.5rem 1rem;
       }
     }
   }
 }
 /* Why Choose Us */
+.why-choose-us-wrapper {
+  background: url("../images/patterns/1.png");
+  padding-top: 0.5rem;
+}
 .why-choose-us {
   margin: 2rem 0;
   .section-title {
@@ -410,7 +448,7 @@ header {
       font-size: 1.3rem;
     }
     a {
-      @include btn();
+      @include btn($clr-brown, $clr-white, null);
       background: $clr-brown;
       color: $clr-white;
       margin: 1rem 0;
@@ -473,7 +511,7 @@ header {
 }
 // Footer Section
 .footer-section {
-  background: $clr-grey-dark-2;
+  background: $clr-dark;
   color: $clr-grey-dark-4;
   .footer-wrapper {
     padding: 1rem;
@@ -510,6 +548,9 @@ header {
       .phone {
         margin: 0.5rem 0;
         font-size: 0.9rem;
+        span {
+          font-size: 0.75rem;
+        }
       }
       .phone {
         display: flex;
@@ -519,9 +560,10 @@ header {
     .social-links {
       .links {
         a {
-          color: $clr-grey-dark-2;
-          background: $clr-grey-dark-4;
-          border-radius: $radius-circle;
+          color: $clr-grey-dark-4;
+          background: $clr-dark;
+          box-shadow: $box-shadow-1;
+          //   border-radius: $radius-circle;
           padding: 0.4rem 0.75rem;
           margin: 0 0.1rem;
           font-size: 1rem;
@@ -560,5 +602,570 @@ header {
   .copyright {
     text-align: center;
     padding: 2rem 0;
+  }
+}
+@media screen and(min-width: $screen-sm) {
+  html {
+    font-size: 1rem;
+  }
+  .navbar {
+    .toggle {
+      .left-navs {
+        width: 50%;
+        z-index: 4;
+      }
+    }
+  }
+  header .search-form input,
+  header .search-form button {
+    width: 80vw;
+  }
+  .ads-wrapper {
+    .ads-section {
+      .ads {
+        .single-ad {
+          font-size: 1rem;
+          line-height: 1.9;
+          .ad-title,
+          .ad-price,
+          .ad-promoted,
+          .ad-location,
+          .ad-for-rent-sale,
+          .ad-verified,
+          .ad-sub-info li,
+          .ad-tabs .ad-img .ad-view {
+            font-size: 1rem;
+            line-height: 1.9;
+          }
+        }
+      }
+      .show-more-ads {
+        a {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+  .why-choose-us {
+    @include boxCenter(95%);
+    .section-title p {
+      font-size: 1rem;
+      @include boxCenter(80%);
+    }
+    .why-us-box {
+      @include displayGrid(100%, 1fr 1fr, null, 0.5rem);
+      .single-choose-us {
+        margin: 1rem 1rem;
+        .why-choose-description {
+          font-size: 1rem;
+          @include boxCenter(80%);
+          margin-bottom: 1.5rem;
+        }
+      }
+    }
+  }
+  .testimonial-section {
+    .testimonials {
+      .single-testimonial {
+        margin-top: 3rem;
+        font-size: 1rem;
+        .testimonial-img {
+          width: 20%;
+          top: -25%;
+        }
+        .testimonial-by {
+          margin-top: 3em;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+  .footer-section {
+    .footer-wrapper {
+      padding: 0 1rem;
+      margin-bottom: 0.2rem;
+      @include displayFlex(100%);
+      justify-content: space-between;
+      flex-wrap: wrap;
+      article {
+        margin: 1rem;
+        flex: 1 1 calc(33.3% - 2rem);
+      }
+      .about-us {
+        .about {
+          font-size: 1rem;
+          width: 95%;
+        }
+      }
+      .quick-links {
+        .links {
+          ul {
+            li a {
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+      .contact-us {
+        .email,
+        .address,
+        .phone {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+@media screen and(min-width: $screen-md) {
+  html {
+    font-size: 1rem;
+  }
+  header {
+    .hero {
+      .search-ads {
+        left: 40%;
+        h2 {
+          font-size: 3rem;
+        }
+        .search-form {
+          input,
+          button {
+            width: 35rem;
+            border-radius: $radius;
+            &:focus {
+              outline: none;
+            }
+          }
+          button {
+            width: 9rem;
+          }
+          .form-container {
+            @include displayGrid(null, 80% 20%, null, 1rem);
+            position: relative;
+            .search-button {
+              position: absolute;
+              top: -23%;
+              right: -26%;
+            }
+          }
+        }
+      }
+    }
+  }
+  .navbar {
+    .toggle {
+      .left-navs {
+        width: 40%;
+        z-index: 4;
+      }
+    }
+  }
+  .ads-wrapper {
+    .ads-section {
+      .ads {
+        @include boxCenter(90%);
+        @include displayGrid(null, 1fr 1fr, null, 1rem);
+        .single-ad {
+          border-radius: $radius;
+          padding: 1rem;
+          .info {
+            @include displayGrid(null, 1fr, null, 1rem);
+          }
+          .ad-info {
+            .ad-sub-info {
+              li {
+                padding-right: 1rem;
+              }
+            }
+          }
+          .ad-promoted {
+            background: #43474a;
+            top: 60%;
+            right: 2%;
+            transform: translate(-2%, -60%);
+            // bottom: 0;
+          }
+        }
+      }
+      .ads-container {
+        h2 {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+  .why-choose-us {
+    @include boxCenter(85%);
+    .why-us-box {
+      margin: 2rem 0;
+      @include displayGrid(null, 1fr 1fr, null, null);
+    }
+  }
+  .testimonial-section {
+    .testimonials {
+      .single-testimonial {
+        margin-top: 3.5rem;
+        font-size: 1rem;
+        .testimonial-img {
+          width: 15%;
+          top: -30%;
+        }
+        .testimonial-by {
+          margin-top: 3em;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+  .footer-section {
+    .footer-wrapper {
+      padding: 0 1rem;
+      margin-bottom: 0.2rem;
+    }
+  }
+}
+
+@media screen and(min-width: $screen-lg-min) {
+  html {
+    font-size: 1rem;
+  }
+  .navbar {
+    padding: 2rem;
+    .toggle {
+      .toggle-icon {
+        display: none;
+      }
+      .left-navs {
+        background: none;
+        width: 70%;
+        z-index: 2;
+        color: $clr-white;
+        padding: 1rem 0;
+        display: block !important;
+        margin: 0 1rem;
+        display: none !important;
+        .side-navs {
+          ul {
+            li {
+              display: inline-block;
+              position: relative;
+              .children {
+                background: $clr-white;
+              }
+              .has-children-icon {
+                padding: 0.15rem 0;
+                font-size: 1rem;
+              }
+            }
+          }
+          .s-link {
+            color: $clr-white;
+            font-size: 1rem;
+          }
+        }
+
+        .close-side-nav {
+          display: none;
+        }
+      }
+    }
+  }
+  .hero {
+    .logo-filter {
+      .logo {
+        .logo-icon {
+          position: absolute;
+          top: 4%;
+        }
+      }
+    }
+    .filter-wrapper {
+      width: 30%;
+    }
+    .search-ads {
+      left: 40%;
+      transform: translate(-50%, -40%);
+      h2 {
+        font-size: 4rem;
+        font-weight: 500;
+      }
+      .search-form {
+        input,
+        button {
+          width: 45rem;
+          border-radius: $radius;
+          &:focus {
+            outline: none;
+          }
+        }
+        button {
+          width: 12rem;
+        }
+        .form-container {
+          @include displayGrid(null, 80% 20%, null, 1rem);
+          position: relative;
+          .search-button {
+            position: absolute;
+            top: -23%;
+            right: -26%;
+          }
+        }
+      }
+    }
+  }
+  .is-mobile {
+    display: none;
+  }
+  .is-desktop {
+    display: block;
+  }
+  .grid-view {
+    @include displayGrid(null, 20rem auto, null, 0.4rem);
+  }
+  .desktop-popular-categories {
+    padding: 1rem;
+    .categories-wrapper {
+      background: $clr-white;
+      box-shadow: $box-shadow;
+      // padding: 1rem;
+    }
+    .categories-wrapper {
+      nav {
+        ul {
+          li {
+            padding: 0.6rem 1.5rem;
+            border-bottom: 0.1rem solid $clr-white-off;
+            &:hover {
+              box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.1);
+            }
+
+            a {
+              color: $clr-gray-2;
+              @include displayGrid(null, 0.5fr 1fr 1fr, null, 0.4rem);
+              .cartegory-icon {
+                font-size: 1.3rem;
+                color: $clr-brown;
+                // padding-right: 0.2rem;
+                .cartegory-title {
+                  align-self: center;
+                }
+              }
+              .has-children {
+                justify-self: right;
+                align-self: center;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .ads-wrapper {
+    .ads-section {
+      background: $clr-white;
+      box-shadow: $box-shadow;
+      margin: 1rem 0;
+      padding: 0 0.5rem;
+      padding-bottom: 1rem;
+      .show-more-ads {
+        padding: 1rem;
+      }
+      .ads {
+        width: 100%;
+
+        @include displayGrid(null, 1fr 1fr, null, null);
+        .single-ad {
+          margin: 0;
+          .info {
+            gap: 0;
+            .ad-image {
+              .ad-verified,
+              .ad-for-rent-sale {
+                padding: 0.1rem 0.5rem;
+                font-size: 0.8rem;
+              }
+            }
+            .ad-info {
+              .ad-location {
+                .ad-price {
+                  display: none;
+                }
+              }
+              .ad-category,
+              .ad-sub-info {
+                display: none;
+              }
+            }
+          }
+          .ad-promoted {
+            display: none;
+          }
+        }
+      }
+      .ads-container {
+        padding-bottom: 0.1rem;
+        h2 {
+          font-size: 1.3rem;
+          text-align: left;
+          margin-bottom: 0;
+          &::before {
+            display: none;
+          }
+          &::after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  .why-choose-us {
+    @include boxCenter(95%);
+    .why-us-box {
+      @include displayGrid(null, 1fr 1fr 1fr, null, null);
+      .single-choose-us {
+        margin: 1rem 0.5rem;
+        .why-choose-title {
+          font-size: 1rem;
+        }
+        .why-choose-description {
+          @include boxCenter(95%);
+          margin-bottom: 1.5rem;
+        }
+      }
+    }
+  }
+  .testimonial-section {
+    .testimonials {
+      .single-testimonial {
+        margin-top: 3.5rem;
+        font-size: 1rem;
+        .testimonial-img {
+          width: 12%;
+          top: -35%;
+        }
+        .testimonial-by {
+          margin-top: 3em;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+  .footer-section {
+    .footer-wrapper {
+      padding: 0 1rem;
+      margin-bottom: 0.2rem;
+    }
+  }
+}
+
+@media screen and(min-width: $screen-lg) {
+  .navbar {
+    padding: 1.2rem;
+    width: 100%;
+    position: fixed;
+    z-index: 4;
+  }
+  header {
+    min-height: 60vh !important;
+    .hero {
+      .logo-filter {
+        .logo {
+          .logo-icon {
+            position: absolute;
+            top: 2.5%;
+            position: fixed;
+            z-index: 4;
+          }
+        }
+      }
+      .filter-wrapper {
+        width: 20%;
+      }
+      .search-ads {
+        left: 40%;
+        top: 30%;
+        transform: translate(-50%, -40%);
+        h2 {
+          font-size: 2rem;
+          font-weight: 500;
+        }
+        .search-form {
+          input,
+          button {
+            width: 50rem;
+            padding: 1rem;
+          }
+          button {
+            width: 15rem;
+          }
+          .form-container {
+            .search-button {
+              right: -30%;
+            }
+          }
+        }
+      }
+    }
+  }
+  .ads-wrapper {
+    .ads-section {
+      .ads {
+        @include displayGrid(null, 1fr 1fr 1fr, null, 1rem);
+      }
+      .ads-container {
+        h2 {
+          font-size: 1.3rem;
+        }
+      }
+    }
+  }
+  .why-choose-us {
+    @include boxCenter(85%);
+    margin-top: 7rem;
+    margin-bottom: 4rem;
+    .section-title {
+      p {
+        @include boxCenter(60%);
+      }
+    }
+    .why-us-box {
+      @include displayGrid(null, 1fr 1fr 1fr, null, null);
+      .single-choose-us {
+        .why-choose-description {
+          @include boxCenter(95%);
+          margin-bottom: 1.5rem;
+        }
+      }
+    }
+  }
+  .testimonial-section {
+    .testimonials {
+      padding-top: 4rem;
+      padding-bottom: 7rem;
+      .single-testimonial {
+        @include boxCenter(70%);
+        margin-top: 6rem;
+        font-size: 1rem;
+        padding: 2rem;
+        .testimonial-img {
+          width: 12%;
+          top: -35%;
+        }
+        .testimonial-by {
+          margin-top: 2.2em;
+          margin-bottom: 0.8rem;
+        }
+        .testimonial {
+          @include boxCenter(80%);
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+  .footer-section {
+    .footer-wrapper {
+      padding: 0 1rem;
+      margin-bottom: 0.2rem;
+    }
   }
 }
