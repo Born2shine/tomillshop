@@ -38,23 +38,34 @@
             <nav class="side-navs">
               <ul>
                 <li><a class="s-link" href="#">Home</a></li>
-                <li>
+                <li class="has-children">
                   <a class="s-link" href="#">Category</a>
-                  <span class="has-children"
+                  <span class="has-children-icon"
                     ><i class="fas fa-angle-down"></i
                   ></span>
-                </li>
-                <li>
-                  <a class="s-link" href="#">About</a>
-                  <span class="has-children"
-                    ><i class="fas fa-angle-down"></i
-                  ></span>
+                  <ul class="children">
+                    <li><a href="#">Apartment (10)</a></li>
+                    <li><a href="#">Houses (20)</a></li>
+                    <li><a href="#">Cars (12)</a></li>
+                    <li><a href="#">Furnitures (5)</a></li>
+                    <li><a href="#">Electronics (7)</a></li>
+                    <li><a href="#">Phones (9)</a></li>
+                    <li><a href="#">Jobs (60)</a></li>
+                    <li><a href="#">Fashion (44)</a></li>
+                    <li><a href="#">Services (18)</a></li>
+                  </ul>
                 </li>
                 <li>
                   <a class="s-link" href="#">Blog</a>
                 </li>
-                <li>
-                  <a class="s-link" href="#">Contact Us</a>
+                <li class="has-children">
+                  <a class="s-link" href="#">About</a>
+                  <span class="has-children-icon"><i class="fas fa-angle-down"></i></span>
+                  <ul class="children">
+                    <li><a href="#">Faq</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                  </ul>
                 </li>
               </ul>
             </nav>
@@ -87,7 +98,6 @@
             <div class="filter">
               <span class="filter-icon" id="filter">
                 <i class="fas fa-filter"></i>
-                <span></span>
               </span>
               <div class="filter-wrapper animate__animated">
                 <div class="filter-box">
@@ -102,28 +112,27 @@
             </div>
           </div>
           <div class="search-ads">
-            <h1>Check Our Store Now.</h1>
-            <div class="search-text">
-              For Affordable Gadgets, Home Appliances, Electronics, Cars, Houses
-              e.t.c
-            </div>
-            <h2>Search For Ads</h2>
+            <h2>Search For Ad</h2>
             <div class="search-form">
               <form action="">
-                <div class="">
-                  <input
-                    type="text"
-                    placeholder="Brand Name, Category, Model etc"
-                  />
-                  <button>Search</button>
+                <div class="form-container">
+                 <div>
+                    <input type="text" placeholder="Brand Name, Category, Model etc" />
+                 </div>
+                  <div class="search-button">
+                    <button>Search</button>
+                  </div>
                 </div>
               </form>
             </div>
           </div>
         </div>
       </header>
-      <!-- Popular Categories -->
-      <section class="popular-categories">
+
+    <!-- grid view -->
+    <section class="grid-view">
+      <!-- Popular Categories Mobile-->
+      <section class="popular-categories is-mobile">
         <div class="popular">
           <h3> Popular Categories</h3>
           <ul>
@@ -166,153 +175,314 @@
           </ul>
         </div>
       </section>
-      <!-- End Popular Categories -->
+      <!-- End Popular Categories Mobile -->
+
+      <!-- Popular Cartegories Desktop -->
+      <section class="desktop-popular-categories is-desktop">
+        <div class="categories-wrapper">
+          <nav>
+            <ul>
+              <li>
+                <a href="#" class="category">
+                <span class="cartegory-icon"><i class="fas fa-building"></i></span>
+                <span class="cartegory-title">
+                  Apartment
+                </span>
+                <span class="has-children">
+                  <i class="fas fa-angle-right"></i>
+                </span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="category">
+                  <span class="cartegory-icon"><i class="fas fa-home"></i></span>
+                  <span class="cartegory-title">
+                    Houses
+                  </span>
+                  <span class="has-children">
+                    <i class="fas fa-angle-right"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="category">
+                  <span class="cartegory-icon"><i class="fas fa-car"></i></span>
+                  <span class="cartegory-title">
+                    Cars
+                  </span>
+                  <span class="has-children">
+                    <i class="fas fa-angle-right"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="category">
+                  <span class="cartegory-icon"><i class="fas fa-couch"></i></span>
+                  <span class="cartegory-title">
+                    Furnitures
+                  </span>
+                  <span class="has-children">
+                    <i class="fas fa-angle-right"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="category">
+                  <span class="cartegory-icon"><i class="fas fa-tv"></i></span>
+                  <span class="cartegory-title">
+                    Electronics
+                  </span>
+                  <span class="has-children">
+                    <i class="fas fa-angle-right"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="category">
+                  <span class="cartegory-icon"><i class="fas fa-mobile-alt"></i></span>
+                  <span class="cartegory-title">
+                    Phones
+                  </span>
+                  <span class="has-children">
+                    <i class="fas fa-angle-right"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="category">
+                  <span class="cartegory-icon"><i class="fas fa-briefcase"></i></span>
+                  <span class="cartegory-title">
+                    Jobs
+                  </span>
+                  <span class="has-children">
+                    <i class="fas fa-angle-right"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="category">
+                  <span class="cartegory-icon"><i class="fas fa-tshirt"></i></span>
+                  <span class="cartegory-title">
+                    Fashion
+                  </span>
+                  <span class="has-children">
+                    <i class="fas fa-angle-right"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="category">
+                  <span class="cartegory-icon"><i class="fas fa-cog"></i></span>
+                  <span class="cartegory-title">
+                    Services
+                  </span>
+                  <span class="has-children">
+                    <i class="fas fa-angle-right"></i>
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </section>
+      <!-- End Popular Cartegories Desktop -->
+
       <!-- Ads -->
-      <section class="ads-section">
-        <div class="ads-container">
-          <h2 class="section-title">Top Ads</h2>
-        </div>
-        <div class="ads">
-          <!-- single-ad -->
-          <article class="single-ad promoted">
-            <div class="ad-image">
-              <img src="assets/images/ads/houses/flat.jpg" alt="" />
-              <!-- features -->
-              <span class="ad-verified"><i class="fas fa-star"></i> VIP </span><span class="ad-for-rent-sale"> For Rent</span>
-              <ul class="ad-tabs">
-                <li class="ad-img"><span class="ad-images"> <span class="ad-image-count"> 10 </span><i class="fas fa-camera"></i></span></li>
-                <li class="ad-view"><span class="view-ad"><i class="fas fa-eye"></i></span></li>
-              </ul>
-              <!-- end of features -->
-            </div>
-            <div class="ad-info">
-              <h5 class="ad-category">Flat</h5>
-              <div class="ad-title">2 bedroom flat for rent</div>
-              <div class="ad-location">
-                <span class="location-icon"
-                  ><i class="fas fa-map-marker-alt"></i
-                ></span>
-                Akure
-                <span class="ad-price">&#8358; 80,000</span>
+      <section class="ads-wrapper">
+        <section class="ads-section">
+          <div class="ads-container">
+            <h2 class="section-title"><span><i class="fas fa-fire"></i></span> Top Ads</h2>
+          </div>
+          <div class="ads">
+            <!-- single-ad -->
+            <article class="single-ad promoted">
+              <div class="info">
+                <div class="ad-image">
+                  <img src="assets/images/ads/houses/flat.jpg" alt="" />
+                  <!-- features -->
+                  <span class="ad-verified"><i class="fas fa-star"></i> VIP </span><span class="ad-for-rent-sale"> For Rent</span>
+                  <ul class="ad-tabs">
+                    <li class="ad-img"><span class="ad-images"> <span class="ad-image-count"> 10 </span><i
+                          class="fas fa-camera"></i></span></li>
+                    <li class="ad-view"><span class="view-ad"><i class="fas fa-eye"></i></span></li>
+                  </ul>
+                  <!-- end of features -->
+                </div>
+                <div class="ad-info">
+                  <h5 class="ad-category">Flat</h5>
+                  <div class="ad-title">2 bedroom flat for rent</div>
+                  <div class="ad-location">
+                    <span class="location-icon"><i class="fas fa-map-marker-alt"></i></span>
+                    Akure
+                    <span class="ad-price">&#8358; 80,000</span>
+                  </div>
+                  <div class="ad-sub-info">
+                    <li>Beds: 2</li>
+                    <li>Baths: 3</li>
+                    <li>Size: 3200</li>
+                  </div>
+                </div>
               </div>
-              <div class="ad-sub-info">
-                <li>Beds: 2</li>
-                <li>Baths: 3</li>
-                <li>Size: 3200</li>
-              </div>
-            </div>
-            <span class="ad-promoted"><i class="fas fa-check"></i> Promoted</span>
-          </article>
-          <!-- end single-ad -->
+              
+              <span class="ad-promoted"><i class="fas fa-check"></i> Promoted</span>
+            </article>
+            <!-- end single-ad -->
 
-          <!-- single-ad -->
-          <article class="single-ad">
-            <div class="ad-image">
-              <img src="assets/images/ads/houses/flat.jpg" alt="" />
-              <!-- features -->
-              <span class="ad-verified"><i class="fas fa-star"></i> VIP</span>
-              <span class="ad-for-rent-sale"> For Rent</span>
-              <ul class="ad-tabs">
-                <li class="ad-img"><span class="ad-images"> <span class="ad-image-count"> 5 </span><i
-                      class="fas fa-camera"></i></span></li>
-                <li class="ad-view"><span class="view-ad"><i class="fas fa-eye"></i></span></li>
-              </ul>
-              <!-- end of features -->
-            </div>
-            <div class="ad-info">
-              <h5 class="ad-category">Duplex</h5>
-              <div class="ad-title">Duplex available for sale.</div>
-              <div class="ad-location">
-                <span class="location-icon"
-                  ><i class="fas fa-map-marker-alt"></i
-                ></span>
-                Lagos
-                <span class="ad-price">&#8358; 120,000</span>
+            <!-- single-ad -->
+            <article class="single-ad promoted">
+              <div class="info">
+                <div class="ad-image">
+                  <img src="assets/images/ads/houses/flat.jpg" alt="" />
+                  <!-- features -->
+                  <span class="ad-verified"><i class="fas fa-star"></i> VIP </span><span class="ad-for-rent-sale"> For Rent</span>
+                  <ul class="ad-tabs">
+                    <li class="ad-img"><span class="ad-images"> <span class="ad-image-count"> 10 </span><i
+                          class="fas fa-camera"></i></span></li>
+                    <li class="ad-view"><span class="view-ad"><i class="fas fa-eye"></i></span></li>
+                  </ul>
+                  <!-- end of features -->
+                </div>
+                <div class="ad-info">
+                  <h5 class="ad-category">Flat</h5>
+                  <div class="ad-title">2 bedroom flat for rent</div>
+                  <div class="ad-location">
+                    <span class="location-icon"><i class="fas fa-map-marker-alt"></i></span>
+                    Akure
+                    <span class="ad-price">&#8358; 80,000</span>
+                  </div>
+                  <div class="ad-sub-info">
+                    <li>Beds: 2</li>
+                    <li>Baths: 3</li>
+                    <li>Size: 3200</li>
+                  </div>
+                </div>
               </div>
-              <div class="ad-sub-info">
-                <li>Beds: 2</li>
-                <li>Baths: 3</li>
-                <li>Size: 3200</li>
+            
+              <span class="ad-promoted"><i class="fas fa-check"></i> Promoted</span>
+            </article>
+            <!-- end single-ad -->
+        
+            <!-- single-ad -->
+            <article class="single-ad">
+              <div class="info">
+              <div class="ad-image">
+                <img src="assets/images/ads/houses/flat.jpg" alt="" />
+                <!-- features -->
+                <span class="ad-verified"><i class="fas fa-star"></i> VIP</span>
+                <span class="ad-for-rent-sale"> For Rent</span>
+                <ul class="ad-tabs">
+                  <li class="ad-img"><span class="ad-images"> <span class="ad-image-count"> 5 </span><i
+                        class="fas fa-camera"></i></span></li>
+                  <li class="ad-view"><span class="view-ad"><i class="fas fa-eye"></i></span></li>
+                </ul>
+                <!-- end of features -->
               </div>
-            </div>
-          </article>
-          <!-- end single-ad -->
-        </div>
+              <div class="ad-info">
+                <h5 class="ad-category">Duplex</h5>
+                <div class="ad-title">Duplex available for sale.</div>
+                <div class="ad-location">
+                  <span class="location-icon"><i class="fas fa-map-marker-alt"></i></span>
+                  Lagos
+                  <span class="ad-price">&#8358; 120,000</span>
+                </div>
+                <div class="ad-sub-info">
+                  <li>Beds: 2</li>
+                  <li>Baths: 3</li>
+                  <li>Size: 3200</li>
+                </div>
+              </div>
+              </div>
+            </article>
+            <!-- end single-ad -->
+          </div>
+        </section>
+        
+        <!-- Recent Ads -->
+        <section class="ads-section">
+          <div class="ads-container">
+            <h2 class="section-title"><span><i class="fas fa-plus-circle"></i></span> Recent Ads</h2>
+          </div>
+          <div class="ads">
+            <!-- single-ad -->
+            <article class="single-ad">
+              <div class="info">
+              <div class="ad-image">
+                <img src="assets/images/ads/houses/flat.jpg" alt="" />
+                <!-- features -->
+                <span class="ad-for-rent-sale"> For Sale</span>
+                <ul class="ad-tabs">
+                  <li class="ad-img"><span class="ad-images"> <span class="ad-image-count"> 5 </span><i
+                        class="fas fa-camera"></i></span></li>
+                  <li class="ad-view"><span class="view-ad"><i class="fas fa-eye"></i></span></li>
+                </ul>
+                <!-- end of features -->
+              </div>
+              <div class="ad-info">
+                <h5 class="ad-category">Flat</h5>
+                <div class="ad-title">2 bedroom flat for sale</div>
+                <div class="ad-location">
+                  <span class="location-icon"><i class="fas fa-map-marker-alt"></i></span>
+                  Ibadan
+                  <span class="ad-price">&#8358; 45,000</span>
+                </div>
+                <div class="ad-sub-info">
+                  <li>Beds: 5</li>
+                  <li>Baths: 3</li>
+                  <li>Size: 4200</li>
+                </div>
+              </div>
+              </div>
+            </article>
+            <!-- end single-ad -->
+        
+            <!-- single-ad -->
+            <article class="single-ad">
+              <div class="info">
+              <div class="ad-image">
+                <img src="assets/images/ads/houses/flat.jpg" alt="" />
+                <!-- features -->
+                <span class="ad-for-rent-sale"> For Sale</span>
+                <span class="ad-verified"><i class="fas fa-star"></i> VIP </span>
+                <ul class="ad-tabs">
+                  <li class="ad-img"><span class="ad-images"> <span class="ad-image-count"> 5 </span><i
+                        class="fas fa-camera"></i></span></li>
+                  <li class="ad-view"><span class="view-ad"><i class="fas fa-eye"></i></span></li>
+                </ul>
+                <!-- end of features -->
+              </div>
+              <div class="ad-info">
+                <h5 class="ad-category">Bungalow</h5>
+                <div class="ad-title">2 bedroom flat for rent</div>
+                <div class="ad-location">
+                  <span class="location-icon"><i class="fas fa-map-marker-alt"></i></span>
+                  Akure
+                  <span class="ad-price">&#8358; 80,000</span>
+                </div>
+                <div class="ad-sub-info">
+                  <li>Beds: 2</li>
+                  <li>Baths: 3</li>
+                  <li>Size: 3200</li>
+                </div>
+              </div>
+              </div>
+            </article>
+            <!-- end single-ad -->
+          </div>
+          <div class="show-more-ads">
+            <a href="#" class="btn">Show More Ads</a>
+          </div>
+        </section>
       </section>
+    <!--End Ads -->
+    </section>
+    <!-- ends grid view -->
 
-      <!-- Recent Ads -->
-      <section class="ads-section">
-        <div class="ads-container">
-          <h2 class="section-title">Recent Ads</h2>
-        </div>
-        <div class="ads">
-          <!-- single-ad -->
-          <article class="single-ad">
-            <div class="ad-image">
-              <img src="assets/images/ads/houses/flat.jpg" alt="" />
-              <!-- features -->
-              <span class="ad-for-rent-sale"> For Sale</span>
-              <ul class="ad-tabs">
-                <li class="ad-img"><span class="ad-images"> <span class="ad-image-count"> 5 </span><i
-                      class="fas fa-camera"></i></span></li>
-                <li class="ad-view"><span class="view-ad"><i class="fas fa-eye"></i></span></li>
-              </ul>
-              <!-- end of features -->
-            </div>
-            <div class="ad-info">
-              <h5 class="ad-category">Flat</h5>
-              <div class="ad-title">2 bedroom flat for sale</div>
-              <div class="ad-location">
-                <span class="location-icon"><i class="fas fa-map-marker-alt"></i></span>
-                Ibadan
-                <span class="ad-price">&#8358; 45,000</span>
-              </div>
-              <div class="ad-sub-info">
-                <li>Beds: 5</li>
-                <li>Baths: 3</li>
-                <li>Size: 4200</li>
-              </div>
-            </div>
-          </article>
-          <!-- end single-ad -->
-      
-          <!-- single-ad -->
-          <article class="single-ad">
-            <div class="ad-image">
-              <img src="assets/images/ads/houses/flat.jpg" alt="" />
-              <!-- features -->
-              <span class="ad-for-rent-sale"> For Sale</span>
-              <span class="ad-verified"><i class="fas fa-star"></i> VIP </span>
-              <ul class="ad-tabs">
-                <li class="ad-img"><span class="ad-images"> <span class="ad-image-count"> 5 </span><i
-                      class="fas fa-camera"></i></span></li>
-                <li class="ad-view"><span class="view-ad"><i class="fas fa-eye"></i></span></li>
-              </ul>
-              <!-- end of features -->
-            </div>
-            <div class="ad-info">
-              <h5 class="ad-category">Bungalow</h5>
-              <div class="ad-title">2 bedroom flat for rent</div>
-              <div class="ad-location">
-                <span class="location-icon"><i class="fas fa-map-marker-alt"></i></span>
-                Akure
-                <span class="ad-price">&#8358; 80,000</span>
-              </div>
-              <div class="ad-sub-info">
-                <li>Beds: 2</li>
-                <li>Baths: 3</li>
-                <li>Size: 3200</li>
-              </div>
-            </div>
-          </article>
-          <!-- end single-ad -->
-        </div>
-      </section>
       <!-- Why Choose Us -->
-      <section class="why-choose-us">
+      <section class="why-choose-us-wrapper">
+        <div class="why-choose-us">
         <div class="section-title">
           <h2>Why Choose Us</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro </p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas, saepe veritatis accusantium odio, temporibus molestiae quod, voluptate nam neque consequuntur et sed autem quisquam quae expedita id eos incidunt! Deleniti. </p>
         </div>
         <div class="why-us-box">
           <!-- single choose us -->
@@ -324,7 +494,7 @@
              Trust
            </h2>
            <div class="why-choose-description">
-            Aliquam dictum elit vitae mauris facilisis at dictum urna dignissim donec vel lectus vel felis dictum urna dignissim donec  felis.
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas aliquid possimus
            </div>
           </article>
           <!-- end single choose us -->
@@ -338,8 +508,7 @@
               Security
             </h2>
             <div class="why-choose-description">
-              Aliquam dictum elit vitae mauris facilisis at dictum urna dignissim donec vel lectus vel felis dictum urna dignissim
-              donec felis.
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas aliquid possimus
             </div>
           </article>
           <!-- end single choose us -->
@@ -353,8 +522,7 @@
               Ads Verification
             </h2>
             <div class="why-choose-description">
-              Aliquam dictum elit vitae mauris facilisis at dictum urna dignissim donec vel lectus vel felis dictum urna dignissim
-              donec felis.
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas aliquid possimus
             </div>
           </article>
           <!-- end single choose us -->
@@ -382,7 +550,7 @@
                 Financing Made Easy
               </h2>
               <div class="why-choose-description">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas aliquid possimus eum fugiat architecto officia.
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas aliquid possimus
               </div>
             </article>
             <!-- end single choose us -->
@@ -390,17 +558,17 @@
           <!-- single choose us -->
           <article class="single-choose-us">
             <div class="why-choose-img">
-              <img src="assets/images/why-us/technical-support.svg" alt="">
+              <img src="assets/images/why-us/properties.svg" alt="">
             </div>
             <h2 class="why-choose-title">
               24/7 Online Support
             </h2>
             <div class="why-choose-description">
-              Aliquam dictum elit vitae mauris facilisis at dictum urna dignissim donec vel lectus vel felis dictum urna dignissim
-              donec felis.
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas aliquid possimus
             </div>
           </article>
           <!-- end single choose us -->
+        </div>
         </div>
       </section>
       <!-- become a seller -->

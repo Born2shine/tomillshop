@@ -16,14 +16,23 @@ $(document).ready(() => {
     $(".left-navs").toggle("animate__slideInLeft");
   });
   //Show Nexted Navs
-  $(".has-children").click((e) => {
+  $(".has-children-icon i").click((e) => {
     let arrowDown = e.target;
+    let nextedList = e.target.parentNode.parentNode.children[2];
     let checkArrowDown = $(arrowDown).hasClass("rotate180");
     if (checkArrowDown) {
       $(arrowDown).removeClass("rotate180");
     } else {
       $(arrowDown).addClass(["rotate180"]);
     }
+    let nextedListLink = nextedList.children;
+    nextedListLink = Array.from(nextedListLink);
+    nextedListLink.forEach((li) => {
+      nextedListLink = li.children;
+      $(nextedListLink).css("color", "#343a40");
+    });
+
+    $(nextedList).slideToggle();
   });
 
   // Owl Corousel

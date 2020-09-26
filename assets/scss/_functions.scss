@@ -45,3 +45,11 @@
   border: none;
   background: $bg;
 }
+@mixin btn($bg, $clr, $font-z) {
+  background: $bg;
+  color: $clr;
+  font-size: $font-z;
+  padding: 1rem;
+  font-family: $font-family;
+  border: none;
+}

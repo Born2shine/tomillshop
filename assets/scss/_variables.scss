@@ -4,6 +4,7 @@ $clr-purple: #6f42c1;
 $clr-pink: #e83e8c;
 $clr-red: #dc3545;
 $clr-brown: #e05b3d;
+$clr-brown-light: #f97355;
 $clr-brown-off: #92584c;
 $clr-orange: #fd7e14;
 $clr-yellow: #ffc107;
@@ -12,7 +13,10 @@ $clr-green-2: #46ea6b;
 $clr-teal: #20c997;
 $clr-cyan: #17a2b8;
 $clr-white: #fff;
+$clr-white-off: #f3f5f7;
+$clr-white-off-2: #fafafa;
 $clr-gray: #6c757d;
+$clr-gray-2: #9e9e9e;
 $clr-gray-dark: #343a40;
 $clr-grey-darker: #4a4b4c;
 $clr-grey-dark-2: #49535d;
@@ -60,6 +64,11 @@ $f-size-095: 0.95rem;
 $f-size-1: 1rem;
 $f-size-2: 2rem;
 $f-size-3: 3rem;
+
+$screen-sm: 576px;
+$screen-md: 768px;
+$screen-lg-min: 992px;
+$screen-lg: 1200px;
 
 // buttons
 @mixin btn {
