@@ -1031,6 +1031,7 @@ header .search-form button:focus {
   }
   .why-choose-us .why-us-box {
     margin: 2rem 0;
+    margin-bottom: 0;
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 1fr 1fr;
@@ -1047,6 +1048,20 @@ header .search-form button:focus {
   .testimonial-section .testimonials .single-testimonial .testimonial-by {
     margin-top: 3em;
     font-size: 1rem;
+  }
+  .become-a-seller {
+    background: #49535d;
+  }
+  .become-a-seller .sell-now {
+    width: 70%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto 1fr;
+        grid-template-columns: auto 1fr;
+    margin: 0 auto;
+  }
+  .become-a-seller .sell-now .sell-text {
+    line-height: 2.2;
   }
   .footer-section .footer-wrapper {
     padding: 0 1rem;
@@ -1300,8 +1315,6 @@ header .search-form button:focus {
   header .hero .search-ads {
     left: 40%;
     top: 30%;
-    -webkit-transform: translate(-50%, -40%);
-            transform: translate(-50%, -40%);
   }
   header .hero .search-ads h2 {
     font-size: 2rem;
@@ -1309,11 +1322,11 @@ header .search-form button:focus {
   }
   header .hero .search-ads .search-form input,
   header .hero .search-ads .search-form button {
-    width: 50rem;
+    width: 45rem;
     padding: 1rem;
   }
   header .hero .search-ads .search-form button {
-    width: 15rem;
+    width: 13rem;
   }
   header .hero .search-ads .search-form .form-container .search-button {
     right: -30%;
@@ -1331,8 +1344,8 @@ header .search-form button:focus {
   .why-choose-us {
     width: 85%;
     margin: 0 auto;
-    margin-top: 7rem;
-    margin-bottom: 4rem;
+    margin-top: 2rem;
+    margin-bottom: 0;
   }
   .why-choose-us .section-title p {
     width: 60%;
@@ -1372,6 +1385,16 @@ header .search-form button:focus {
     width: 80%;
     margin: 0 auto;
     margin-bottom: 1rem;
+  }
+  .become-a-seller .sell-now {
+    width: 40%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto 1fr;
+        grid-template-columns: auto 1fr;
+  }
+  .become-a-seller .sell-now .sell-text h2 {
+    font-size: 1.4rem;
   }
   .footer-section .footer-wrapper {
     padding: 0 1rem;

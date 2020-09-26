@@ -806,6 +806,7 @@ header {
     @include boxCenter(85%);
     .why-us-box {
       margin: 2rem 0;
+      margin-bottom: 0;
       @include displayGrid(null, 1fr 1fr, null, null);
     }
   }
@@ -822,6 +823,16 @@ header {
           margin-top: 3em;
           font-size: 1rem;
         }
+      }
+    }
+  }
+  .become-a-seller {
+    background: $clr-grey-dark-2;
+    .sell-now {
+      @include displayGrid(70%, auto 1fr, null, null);
+      margin: 0 auto;
+      .sell-text {
+        line-height: 2.2;
       }
     }
   }
@@ -1092,7 +1103,7 @@ header {
       .search-ads {
         left: 40%;
         top: 30%;
-        transform: translate(-50%, -40%);
+        // transform: translate(-50%, -40%);
         h2 {
           font-size: 2rem;
           font-weight: 500;
@@ -1100,11 +1111,11 @@ header {
         .search-form {
           input,
           button {
-            width: 50rem;
+            width: 45rem;
             padding: 1rem;
           }
           button {
-            width: 15rem;
+            width: 13rem;
           }
           .form-container {
             .search-button {
@@ -1129,8 +1140,8 @@ header {
   }
   .why-choose-us {
     @include boxCenter(85%);
-    margin-top: 7rem;
-    margin-bottom: 4rem;
+    margin-top: 2rem;
+    margin-bottom: 0;
     .section-title {
       p {
         @include boxCenter(60%);
@@ -1166,6 +1177,16 @@ header {
         .testimonial {
           @include boxCenter(80%);
           margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+  .become-a-seller {
+    .sell-now {
+      @include displayGrid(40%, auto 1fr, null, null);
+      .sell-text {
+        h2 {
+          font-size: 1.4rem;
         }
       }
     }
