@@ -9,7 +9,7 @@
 body {
   font-family: "Nunito", sans-serif;
   font-size: 1rem;
-  background: #49535d;
+  background: #343a40;
 }
 
 .wrapper {
@@ -22,6 +22,7 @@ body {
   width: 30%;
   padding: 2rem;
   background: #fff;
+  border-radius: 0.3rem;
 }
 
 header {
@@ -39,6 +40,7 @@ header {
   font-size: 15px;
   text-align: center;
   padding: 0.5rem;
+  color: #49535d;
 }
 
 .sm-btn {
@@ -172,8 +174,9 @@ h4:after {
 .checkbox__text {
   font-size: .9rem;
   position: absolute;
+  color: #49535d;
   left: 20px;
-  top: -5px;
+  top: -3px;
 }
 
 .login__btn {
@@ -205,12 +208,19 @@ h4:after {
 
 a {
   text-decoration: none;
-  color: #49535d;
+  color: #e05b3d;
   font-size: .9rem;
 }
 
 a:hover {
   color: #e05b3d;
+}
+
+.form__text {
+  text-decoration: none;
+  color: #49535d;
+  font-size: .9rem;
+  cursor: default;
 }
 
 .forgot__password {
@@ -221,5 +231,74 @@ a:hover {
 @media (max-width: 858px) {
   .form_container {
     width: 90%;
+  }
+  .sm-btn {
+    padding: 1rem;
+    border-radius: 0.3rem;
+    border: none;
+    cursor: pointer;
+    transition: all 1s ease;
+    font-family: "Nunito", sans-serif;
+    margin: auto .3rem;
+    color: #fff;
+    padding: 0.5rem 1rem;
+  }
+  .sm-btn:focus {
+    outline: none;
+  }
+  .checkbox__text {
+    top: -4px;
+  }
+}
+
+.form_container {
+  margin: 2rem auto;
+  width: 30%;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 0.3rem;
+}
+
+.login__btn {
+  padding: 1rem;
+  border-radius: 0.3rem;
+  border: none;
+  cursor: pointer;
+  transition: all 1s ease;
+  font-family: "Nunito", sans-serif;
+  font-size: .9rem;
+  padding: .5rem 2rem;
+  background: #e05b3d;
+  color: #fff;
+}
+
+.login__btn:focus {
+  outline: none;
+}
+
+.login__btn:hover {
+  background: #dc3545;
+}
+
+@media (max-width: 858px) {
+  .form_container {
+    width: 90%;
+  }
+  .sm-btn {
+    padding: 1rem;
+    border-radius: 0.3rem;
+    border: none;
+    cursor: pointer;
+    transition: all 1s ease;
+    font-family: "Nunito", sans-serif;
+    margin: auto .3rem;
+    color: #fff;
+    padding: 0.5rem 1rem;
+  }
+  .sm-btn:focus {
+    outline: none;
+  }
+  .checkbox__text {
+    top: -4px;
   }
 }

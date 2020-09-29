@@ -2,3 +2,41 @@
 @import "./variables";
 @import "./login";
 
+
+.form_container{
+    margin: 2rem auto;
+    width: 30%;
+    padding: 2rem;
+    background: $clr-white;
+    border-radius: 0.3rem;
+}
+.login__btn {
+    @include btn();
+    font-size: .9rem;
+    padding: .5rem 2rem;
+    background: $clr-brown;
+    color: $clr-white;
+
+    &:hover {
+        background: $clr-red;
+    }
+}
+@media(max-width: 858px) {
+    .form_container {
+        width: 90%;
+    }
+
+    .sm-btn {
+        @include btn();
+        margin: auto .3rem;
+        color: $clr-white;
+        padding: 0.5rem 1rem;
+        // border-radius: 50%;
+    }
+
+    .checkbox__text {
+        top: -4px;
+    }
+
+}
+

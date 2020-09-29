@@ -5,7 +5,7 @@ $flex : flex;
 $background_color: #49535d;
 $facebook: #1877f2;
 $twitter: #1a91da;
-$gmail: #d93025; 
+$gmail: #d93025;
 
 * {
     margin: 0px;
@@ -16,7 +16,7 @@ $gmail: #d93025;
 body {
     font-family: $font-family;
     font-size: $f-size-1;
-    background: $background_color
+    background: #343a40;
 }
 
 .wrapper {
@@ -29,6 +29,7 @@ body {
     width: 30%;
     padding: 2rem;
     background: $clr-white;
+    border-radius: 0.3rem;
 }
 
 header {
@@ -41,31 +42,39 @@ header {
 .sm-icons {
     text-align: center;
 }
+
 .subheader {
     font-size: 15px;
     text-align: center;
     padding: 0.5rem;
+    color: #49535d;
 }
-.sm-btn{
+
+.sm-btn {
     @include btn();
     margin: auto .3rem;
     color: $clr-white;
     padding: 1rem 2rem;
     // border-radius: 50%;
 }
-.sm-btn:hover{
+
+.sm-btn:hover {
     background: $clr-gray;
 }
-.facebook{
+
+.facebook {
     background: $facebook;
     // width: 45px;
 }
-.gmail{
+
+.gmail {
     background: $gmail;
 }
-.twitter{
+
+.twitter {
     background: $twitter;
 }
+
 h4 {
     margin: 0.5rem auto;
     text-align: center;
@@ -115,16 +124,17 @@ h4:after {
     background: transparent;
     transition: border-color 0.2s;
 
-    &::placeholder{
+    &::placeholder {
         color: transparent;
-      }
-    
-    &:placeholder-shown ~ .form__label {
+    }
+
+    &:placeholder-shown~.form__label {
         font-size: 1rem;
         cursor: text;
         top: 20px;
-      }
+    }
 }
+
 .form__label {
     position: absolute;
     top: 0;
@@ -132,70 +142,101 @@ h4:after {
     transition: 0.2s;
     font-size: .9rem;
     color: $clr-gray-dark;
-  }
-  
-  .form__field:focus {
-    ~ .form__label {
-      position: absolute;
-      top: 0;
-      display: block;
-      transition: 0.2s;
-      font-size: .9rem;
-      color: $clr-gray-dark;
-      font-weight:500;    
+}
+
+.form__field:focus {
+    ~.form__label {
+        position: absolute;
+        top: 0;
+        display: block;
+        transition: 0.2s;
+        font-size: .9rem;
+        color: $clr-gray-dark;
+        font-weight: 500;
     }
-    padding-bottom: 6px;  
+
+    padding-bottom: 6px;
     font-weight: 400;
     border-width: 2px;
-    border-image: linear-gradient(to right, $clr-white,$clr-brown);
+    border-image: linear-gradient(to right, $clr-white, $clr-brown);
     border-image-slice: 1;
-  }
-  .form__field{
-    &:required,&:invalid { box-shadow:none; }
-  }
-  .checkbox{
+}
+
+.form__field {
+
+    &:required,
+    &:invalid {
+        box-shadow: none;
+    }
+}
+
+.checkbox {
     display: $flex;
     margin: 1.5rem auto;
     position: relative;
-  }
-  .checkbox__text{
-      font-size: .9rem;
-    position: absolute;
-    left: 20px;
-    top: -5px
-  }
+}
 
-  .login__btn{
+.checkbox__text {
+    font-size: .9rem;
+    position: absolute;
+    color: #49535d;
+    left: 20px;
+    top: -3px
+}
+
+.login__btn {
     @include btn();
     font-size: .9rem;
-    padding: .5rem 1.5rem; 
+    padding: .5rem 1.5rem;
     background: $clr-brown;
     color: $clr-white;
+
     &:hover {
         background: $clr-red;
-      }
-  }
-  .form__btn{
-      display: $flex;
-      margin: 1rem auto;
-      justify-content: space-between;
-  }
-  a{
-      text-decoration: none;
-      color: #49535d;
-      font-size: .9rem;
-    &:hover{
+    }
+}
+
+.form__btn {
+    display: $flex;
+    margin: 1rem auto;
+    justify-content: space-between;
+}
+
+a{
+    text-decoration: none;
+    color: $clr-brown;
+    font-size: .9rem;
+
+    &:hover {
         color: $clr-brown;
     }
-  }
-  .forgot__password{
-      padding: 0.5rem;
-      font-size: .9rem;
-  }
+}
+.form__text{
+    text-decoration: none;
+    color: #49535d;
+    font-size: .9rem;
+    cursor: default;
+}
+.forgot__password {
+    padding: 0.5rem;
+    font-size: .9rem;
+}
 
-  @media(max-width: 858px){
+@media(max-width: 858px) {
     .form_container {
         width: 90%;
     }
-  }
-  
+
+    .sm-btn {
+        @include btn();
+        margin: auto .3rem;
+        color: $clr-white;
+        padding: 0.5rem 1rem;
+        // border-radius: 50%;
+    }
+
+    .checkbox__text {
+        top: -4px;
+    }
+
+}
