@@ -206,7 +206,7 @@ header {
       transition: $transition;
       cursor: pointer;
       &:hover {
-        background: $clr-brown-light;
+        background: $clr-dark;
       }
       &:focus {
         outline: none;
@@ -276,6 +276,7 @@ header {
     .ads {
       padding: 0.4rem;
       .single-ad {
+        cursor: pointer;
         .info {
           @include displayGrid(null, 1fr 1fr, null, (0 0.5rem));
         }
@@ -416,6 +417,11 @@ header {
     margin: 1.5rem 1rem;
     border-radius: $radius;
     box-shadow: $box-shadow;
+    transition: $transition;
+    cursor: pointer;
+    &:hover {
+      transform: translateY(-5%);
+    }
   }
   .why-choose-img {
     display: grid;

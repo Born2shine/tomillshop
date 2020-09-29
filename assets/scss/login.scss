@@ -1,201 +1,202 @@
 @import "./fonts";
 @import "./variables";
+@import "./variables";
 
-$flex : flex;
+$flex: flex;
 $background_color: #49535d;
-$facebook: #1877f2;
-$twitter: #1a91da;
-$gmail: #d93025; 
 
 * {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: $font-family;
-    font-size: $f-size-1;
-    background: $background_color
+  font-family: $font-family;
+  font-size: $f-size-1;
+  background: $clr-gray-dark;
 }
 
 .wrapper {
-    display: $flex;
-    justify-content: center;
+  display: $flex;
+  justify-content: center;
 }
 
 .form_container {
-    margin: 5rem auto;
-    width: 30%;
-    padding: 2rem;
-    background: $clr-white;
+  margin: 5rem auto;
+  width: 30%;
+  padding: 2rem;
+  background: $clr-white;
+  border-radius: $radius;
+  //   box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.1);
 }
 
 header {
-    padding-bottom: $pt-1;
-    text-align: center;
-    font-size: 2rem;
-    font-weight: 700;
+  padding-bottom: $pt-1;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
 }
 
 .sm-icons {
-    text-align: center;
+  text-align: center;
 }
 .subheader {
-    font-size: 15px;
-    text-align: center;
-    padding: 0.5rem;
+  font-size: 15px;
+  text-align: center;
+  padding: 0.5rem;
 }
-.sm-btn{
-    @include btn();
-    margin: auto .3rem;
-    color: $clr-white;
-    padding: 1rem 2rem;
-    // border-radius: 50%;
+.sm-btn {
+  @include btn();
+  margin: auto 0.3rem;
+  color: $clr-white;
+  padding: 1rem 2rem;
+  // border-radius: 50%;
 }
-.sm-btn:hover{
-    background: $clr-gray;
+.sm-btn:hover {
+  background: $clr-gray;
 }
-.facebook{
-    background: $facebook;
-    // width: 45px;
+.facebook {
+  background: $facebook;
+  // width: 45px;
 }
-.gmail{
-    background: $gmail;
+.gmail {
+  background: $gmail;
 }
-.twitter{
-    background: $twitter;
+.twitter {
+  background: $twitter;
 }
 h4 {
-    margin: 0.5rem auto;
-    text-align: center;
-    max-width: 600px;
-    position: relative;
-    color: #6c757d;
-
+  margin: 0.5rem auto;
+  text-align: center;
+  max-width: 600px;
+  position: relative;
+  color: #6c757d;
 }
 
 h4:before {
-    content: "";
-    display: block;
-    width: 120px;
-    height: 2px;
-    position: absolute;
-    background: #e3e9ed;
-    top: 10px;
-    left: 55%;
+  content: "";
+  display: block;
+  width: 120px;
+  height: 2px;
+  position: absolute;
+  background: #e3e9ed;
+  top: 10px;
+  left: 55%;
 }
 
 h4:after {
-    content: "";
-    display: block;
-    width: 120px;
-    height: 2px;
-    position: absolute;
-    background: #e3e9ed;
-    top: 10px;
-    right: 55%;
+  content: "";
+  display: block;
+  width: 120px;
+  height: 2px;
+  position: absolute;
+  background: #e3e9ed;
+  top: 10px;
+  right: 55%;
 }
 
 .form__group {
-    position: relative;
-    padding: 15px 0 0;
-    margin-top: 10px;
-    width: 100%;
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  width: 100%;
 }
 
 .form__field {
-    width: 100%;
-    border: 0;
-    border-bottom: 2px solid $clr-gray;
-    outline: 0;
-    font-size: .9rem;
-    color: $clr-gray;
-    padding: 7px 0;
-    background: transparent;
-    transition: border-color 0.2s;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid $clr-gray;
+  outline: 0;
+  font-size: 0.9rem;
+  color: $clr-gray;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
 
-    &::placeholder{
-        color: transparent;
-      }
-    
-    &:placeholder-shown ~ .form__label {
-        font-size: 1rem;
-        cursor: text;
-        top: 20px;
-      }
+  &::placeholder {
+    color: transparent;
+  }
+
+  &:placeholder-shown ~ .form__label {
+    font-size: 1rem;
+    cursor: text;
+    top: 20px;
+  }
 }
 .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 0.9rem;
+  color: $clr-gray-dark;
+}
+
+.form__field:focus {
+  ~ .form__label {
     position: absolute;
     top: 0;
     display: block;
     transition: 0.2s;
-    font-size: .9rem;
+    font-size: 0.9rem;
     color: $clr-gray-dark;
+    font-weight: 500;
   }
-  
-  .form__field:focus {
-    ~ .form__label {
-      position: absolute;
-      top: 0;
-      display: block;
-      transition: 0.2s;
-      font-size: .9rem;
-      color: $clr-gray-dark;
-      font-weight:500;    
-    }
-    padding-bottom: 6px;  
-    font-weight: 400;
-    border-width: 2px;
-    border-image: linear-gradient(to right, $clr-white,$clr-brown);
-    border-image-slice: 1;
+  padding-bottom: 6px;
+  font-weight: 400;
+  border-width: 2px;
+  border-image: linear-gradient(to right, $clr-white, $clr-brown);
+  border-image-slice: 1;
+}
+.form__field {
+  &:required,
+  &:invalid {
+    box-shadow: none;
   }
-  .form__field{
-    &:required,&:invalid { box-shadow:none; }
-  }
-  .checkbox{
-    display: $flex;
-    margin: 1.5rem auto;
-    position: relative;
-  }
-  .checkbox__text{
-      font-size: .9rem;
-    position: absolute;
-    left: 20px;
-    top: -5px
-  }
+}
+.checkbox {
+  display: $flex;
+  margin: 1.5rem auto;
+  position: relative;
+}
+.checkbox__text {
+  font-size: 0.9rem;
+  position: absolute;
+  left: 20px;
+  top: -5px;
+}
 
-  .login__btn{
-    @include btn();
-    font-size: .9rem;
-    padding: .5rem 1.5rem; 
-    background: $clr-brown;
-    color: $clr-white;
-    &:hover {
-        background: $clr-red;
-      }
+.login__btn {
+  @include btn();
+  font-size: 0.9rem;
+  padding: 0.5rem 1.5rem;
+  background: $clr-brown;
+  color: $clr-white;
+  &:hover {
+    background: $clr-red;
   }
-  .form__btn{
-      display: $flex;
-      margin: 1rem auto;
-      justify-content: space-between;
+}
+.form__btn {
+  display: $flex;
+  margin: 1rem auto;
+  justify-content: space-between;
+}
+a {
+  text-decoration: none;
+  color: #49535d;
+  font-size: 0.9rem;
+  &:hover {
+    color: $clr-brown;
   }
-  a{
-      text-decoration: none;
-      color: #49535d;
-      font-size: .9rem;
-    &:hover{
-        color: $clr-brown;
-    }
-  }
-  .forgot__password{
-      padding: 0.5rem;
-      font-size: .9rem;
-  }
+}
+.forgot__password {
+  padding: 0.5rem;
+  font-size: 0.9rem;
+}
 
-  @media(max-width: 858px){
-    .form_container {
-        width: 90%;
-    }
+@media (max-width: 858px) {
+  .form_container {
+    width: 90%;
   }
-  
+}

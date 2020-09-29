@@ -3,18 +3,23 @@
 * {
   margin: 0px;
   padding: 0px;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
   font-family: "Nunito", sans-serif;
   font-size: 1rem;
-  background: #49535d;
+  background: #343a40;
 }
 
 .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .form_container {
@@ -22,6 +27,7 @@ body {
   width: 30%;
   padding: 2rem;
   background: #fff;
+  border-radius: 0.3rem;
 }
 
 header {
@@ -46,9 +52,10 @@ header {
   border-radius: 0.3rem;
   border: none;
   cursor: pointer;
+  -webkit-transition: all 1s ease;
   transition: all 1s ease;
   font-family: "Nunito", sans-serif;
-  margin: auto .3rem;
+  margin: auto 0.3rem;
   color: #fff;
   padding: 1rem 2rem;
 }
@@ -115,11 +122,24 @@ h4:after {
   border: 0;
   border-bottom: 2px solid #6c757d;
   outline: 0;
-  font-size: .9rem;
+  font-size: 0.9rem;
   color: #6c757d;
   padding: 7px 0;
   background: transparent;
+  -webkit-transition: border-color 0.2s;
   transition: border-color 0.2s;
+}
+
+.form__field::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.form__field:-ms-input-placeholder {
+  color: transparent;
+}
+
+.form__field::-ms-input-placeholder {
+  color: transparent;
 }
 
 .form__field::placeholder {
@@ -136,8 +156,9 @@ h4:after {
   position: absolute;
   top: 0;
   display: block;
+  -webkit-transition: 0.2s;
   transition: 0.2s;
-  font-size: .9rem;
+  font-size: 0.9rem;
   color: #343a40;
 }
 
@@ -145,7 +166,9 @@ h4:after {
   padding-bottom: 6px;
   font-weight: 400;
   border-width: 2px;
-  border-image: linear-gradient(to right, #fff, #e05b3d);
+  -o-border-image: linear-gradient(to right, #fff, #e05b3d);
+     border-image: -webkit-gradient(linear, left top, right top, from(#fff), to(#e05b3d));
+     border-image: linear-gradient(to right, #fff, #e05b3d);
   border-image-slice: 1;
 }
 
@@ -153,24 +176,28 @@ h4:after {
   position: absolute;
   top: 0;
   display: block;
+  -webkit-transition: 0.2s;
   transition: 0.2s;
-  font-size: .9rem;
+  font-size: 0.9rem;
   color: #343a40;
   font-weight: 500;
 }
 
 .form__field:required, .form__field:invalid {
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .checkbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin: 1.5rem auto;
   position: relative;
 }
 
 .checkbox__text {
-  font-size: .9rem;
+  font-size: 0.9rem;
   position: absolute;
   left: 20px;
   top: -5px;
@@ -181,10 +208,11 @@ h4:after {
   border-radius: 0.3rem;
   border: none;
   cursor: pointer;
+  -webkit-transition: all 1s ease;
   transition: all 1s ease;
   font-family: "Nunito", sans-serif;
-  font-size: .9rem;
-  padding: .5rem 1.5rem;
+  font-size: 0.9rem;
+  padding: 0.5rem 1.5rem;
   background: #e05b3d;
   color: #fff;
 }
@@ -198,15 +226,19 @@ h4:after {
 }
 
 .form__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin: 1rem auto;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 a {
   text-decoration: none;
   color: #49535d;
-  font-size: .9rem;
+  font-size: 0.9rem;
 }
 
 a:hover {
@@ -215,7 +247,7 @@ a:hover {
 
 .forgot__password {
   padding: 0.5rem;
-  font-size: .9rem;
+  font-size: 0.9rem;
 }
 
 @media (max-width: 858px) {
