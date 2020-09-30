@@ -44,6 +44,7 @@ header {
   font-size: 15px;
   text-align: center;
   padding: 0.5rem;
+  color: #49535d;
 }
 
 .sm-btn {
@@ -198,8 +199,9 @@ h4:after {
 .checkbox__text {
   font-size: 0.9rem;
   position: absolute;
+  color: #49535d;
   left: 20px;
-  top: -5px;
+  top: -3px;
 }
 
 .login__btn {
@@ -236,12 +238,24 @@ h4:after {
 
 a {
   text-decoration: none;
+<<<<<<< HEAD
   color: #49535d;
   font-size: 0.9rem;
+=======
+  color: #e05b3d;
+  font-size: .9rem;
+>>>>>>> 7723664aa184e9573c95e078b9bcb0f2d2fb40b1
 }
 
 a:hover {
   color: #e05b3d;
+}
+
+.form__text {
+  text-decoration: none;
+  color: #49535d;
+  font-size: .9rem;
+  cursor: default;
 }
 
 .forgot__password {
@@ -252,5 +266,22 @@ a:hover {
 @media (max-width: 858px) {
   .form_container {
     width: 90%;
+  }
+  .sm-btn {
+    padding: 1rem;
+    border-radius: 0.3rem;
+    border: none;
+    cursor: pointer;
+    transition: all 1s ease;
+    font-family: "Nunito", sans-serif;
+    margin: auto .3rem;
+    color: #fff;
+    padding: 0.5rem 1rem;
+  }
+  .sm-btn:focus {
+    outline: none;
+  }
+  .checkbox__text {
+    top: -4px;
   }
 }

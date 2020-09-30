@@ -4,6 +4,12 @@
 
 $flex: flex;
 $background_color: #49535d;
+<<<<<<< HEAD
+=======
+$facebook: #1877f2;
+$twitter: #1a91da;
+$gmail: #d93025;
+>>>>>>> 7723664aa184e9573c95e078b9bcb0f2d2fb40b1
 
 * {
   margin: 0px;
@@ -12,9 +18,15 @@ $background_color: #49535d;
 }
 
 body {
+<<<<<<< HEAD
   font-family: $font-family;
   font-size: $f-size-1;
   background: $clr-gray-dark;
+=======
+    font-family: $font-family;
+    font-size: $f-size-1;
+    background: #343a40;
+>>>>>>> 7723664aa184e9573c95e078b9bcb0f2d2fb40b1
 }
 
 .wrapper {
@@ -23,12 +35,20 @@ body {
 }
 
 .form_container {
+<<<<<<< HEAD
   margin: 5rem auto;
   width: 30%;
   padding: 2rem;
   background: $clr-white;
   border-radius: $radius;
   //   box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.1);
+=======
+    margin: 5rem auto;
+    width: 30%;
+    padding: 2rem;
+    background: $clr-white;
+    border-radius: 0.3rem;
+>>>>>>> 7723664aa184e9573c95e078b9bcb0f2d2fb40b1
 }
 
 header {
@@ -41,7 +61,9 @@ header {
 .sm-icons {
   text-align: center;
 }
+
 .subheader {
+<<<<<<< HEAD
   font-size: 15px;
   text-align: center;
   padding: 0.5rem;
@@ -65,7 +87,39 @@ header {
 }
 .twitter {
   background: $twitter;
+=======
+    font-size: 15px;
+    text-align: center;
+    padding: 0.5rem;
+    color: #49535d;
 }
+
+.sm-btn {
+    @include btn();
+    margin: auto .3rem;
+    color: $clr-white;
+    padding: 1rem 2rem;
+    // border-radius: 50%;
+}
+
+.sm-btn:hover {
+    background: $clr-gray;
+}
+
+.facebook {
+    background: $facebook;
+    // width: 45px;
+}
+
+.gmail {
+    background: $gmail;
+}
+
+.twitter {
+    background: $twitter;
+>>>>>>> 7723664aa184e9573c95e078b9bcb0f2d2fb40b1
+}
+
 h4 {
   margin: 0.5rem auto;
   text-align: center;
@@ -104,6 +158,7 @@ h4:after {
 }
 
 .form__field {
+<<<<<<< HEAD
   width: 100%;
   border: 0;
   border-bottom: 2px solid $clr-gray;
@@ -123,7 +178,29 @@ h4:after {
     cursor: text;
     top: 20px;
   }
+=======
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid $clr-gray;
+    outline: 0;
+    font-size: .9rem;
+    color: $clr-gray;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+
+    &::placeholder {
+        color: transparent;
+    }
+
+    &:placeholder-shown~.form__label {
+        font-size: 1rem;
+        cursor: text;
+        top: 20px;
+    }
+>>>>>>> 7723664aa184e9573c95e078b9bcb0f2d2fb40b1
 }
+
 .form__label {
   position: absolute;
   top: 0;
@@ -141,6 +218,7 @@ h4:after {
     transition: 0.2s;
     font-size: 0.9rem;
     color: $clr-gray-dark;
+<<<<<<< HEAD
     font-weight: 500;
   }
   padding-bottom: 6px;
@@ -200,3 +278,103 @@ a {
     width: 90%;
   }
 }
+=======
+}
+
+.form__field:focus {
+    ~.form__label {
+        position: absolute;
+        top: 0;
+        display: block;
+        transition: 0.2s;
+        font-size: .9rem;
+        color: $clr-gray-dark;
+        font-weight: 500;
+    }
+
+    padding-bottom: 6px;
+    font-weight: 400;
+    border-width: 2px;
+    border-image: linear-gradient(to right, $clr-white, $clr-brown);
+    border-image-slice: 1;
+}
+
+.form__field {
+
+    &:required,
+    &:invalid {
+        box-shadow: none;
+    }
+}
+
+.checkbox {
+    display: $flex;
+    margin: 1.5rem auto;
+    position: relative;
+}
+
+.checkbox__text {
+    font-size: .9rem;
+    position: absolute;
+    color: #49535d;
+    left: 20px;
+    top: -3px
+}
+
+.login__btn {
+    @include btn();
+    font-size: .9rem;
+    padding: .5rem 1.5rem;
+    background: $clr-brown;
+    color: $clr-white;
+
+    &:hover {
+        background: $clr-red;
+    }
+}
+
+.form__btn {
+    display: $flex;
+    margin: 1rem auto;
+    justify-content: space-between;
+}
+
+a{
+    text-decoration: none;
+    color: $clr-brown;
+    font-size: .9rem;
+
+    &:hover {
+        color: $clr-brown;
+    }
+}
+.form__text{
+    text-decoration: none;
+    color: #49535d;
+    font-size: .9rem;
+    cursor: default;
+}
+.forgot__password {
+    padding: 0.5rem;
+    font-size: .9rem;
+}
+
+@media(max-width: 858px) {
+    .form_container {
+        width: 90%;
+    }
+
+    .sm-btn {
+        @include btn();
+        margin: auto .3rem;
+        color: $clr-white;
+        padding: 0.5rem 1rem;
+        // border-radius: 50%;
+    }
+
+    .checkbox__text {
+        top: -4px;
+    }
+
+}
+>>>>>>> 7723664aa184e9573c95e078b9bcb0f2d2fb40b1

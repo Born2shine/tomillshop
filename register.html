@@ -4,19 +4,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login</title>
+  <title>Register</title>
   <!-- font awesome -->
   <link rel="stylesheet" href="assets/fontawesome-free-5.12.1-web/css/all.css" />
   <!-- custom stylesheet -->
-  <link rel="stylesheet" href="assets/css/login.css" />
+  <link rel="stylesheet" href="assets/css/register.css" />
 </head>
 
 <body>
   <div class="wrapper">
     <div class="form_container">
-      <header>Login</header>
+      <header>Register</header>
       <div class="sm-icons">
-        <p class="subheader">Sign in with</p>
+        <p class="subheader">Sign up with</p>
         <button class="sm-btn facebook"><i class="fab fa-facebook-f"></i></button>
         <button class="sm-btn gmail"><i class="fab fa-google"></i></button>
         <button class="sm-btn twitter"><i class="fab fa-twitter"></i></button>
@@ -26,30 +26,39 @@
       </div>
       <form>
         <div class="form__group">
+          <input class="form__field" type="text" name="name" placeholder="Full name" id='name' required>
+          <label class="form__label" for="email">Full Name</label>
+        </div>
+        <div class="form__group">
           <input class="form__field" type="email" name="email" placeholder="Email" id='name' required>
           <label class="form__label" for="email">Email</label>
+        </div>
+        <div class="form__group">
+          <input class="form__field" type="tel" name="phone" placeholder="Phone Number"
+            pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" id='phone' required>
+          <label class="form__label" for="email">Phone Number</label>
         </div>
         <div class="form__group">
           <input class="form__field" type="password" name="password" placeholder="Password" required>
           <label class="form__label" for="password">Password</label>
         </div>
+        <div class="form__group">
+          <input class="form__field" type="password" name="confirm__password" placeholder=" Confirm Password" required>
+          <label class="form__label" for="password">Confirm Password</label>
+        </div>
         <div class="checkbox">
           <input type="checkbox">
-          <p class="checkbox__text">Remember me</p>
+          <p class="checkbox__text">Accept terms and conditons</p>
         </div>
         <div class="form__btn">
-          <button class="login__btn">Login</button>
-          <a class="forgot__password" href="#">
-            <p>Forgot Password?</p>
+          <button class="login__btn">Register</button>
           </a>
         </div>
-        <a href="#">
-          <p>Don't have an account?</p>
-        </a>
+        <p class="form__text">Already have an account? <a href="login.html">Login</a></p>
       </form>
     </div>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </body>
 
-</html>s
+</html>
