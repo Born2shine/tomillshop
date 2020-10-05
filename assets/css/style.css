@@ -499,10 +499,6 @@ header .search-form button:focus {
   font-size: 0.7rem;
 }
 
-.ads-wrapper .ads-section .ads .single-ad .ad-view {
-  right: 0;
-}
-
 .ads-wrapper .ads-section .ads .single-ad .ad-info {
   color: #6c757d;
 }

@@ -1,0 +1,97 @@
+@import "./fonts";
+@import "./variables";
+@import "./functions";
+
+// Header
+header {
+  background: none;
+  min-height: initial;
+  .hero {
+    padding-top: 0;
+    .logo-filter {
+      display: none;
+    }
+  }
+}
+
+// Main
+.main {
+  background: $clr-white-off-2;
+  .filter {
+    form {
+      select {
+        padding: 0.3rem;
+        font-family: $font-family;
+        border: 0.1rem solid $clr-grey-dark-3;
+        font-size: 1rem;
+        border-radius: $radius;
+        background: $clr-white;
+      }
+      button {
+        width: 8rem;
+        padding: 0.5rem;
+        font-family: $font-family;
+        border: 0.1rem solid $clr-grey-dark-3;
+        font-size: 1rem;
+        border-radius: $radius;
+        background: $clr-brown;
+        color: $clr-white;
+        border: none;
+      }
+      .filter-container {
+        background: $clr-white-off;
+        box-shadow: $box-shadow-1;
+        display: flex;
+        justify-content: space-between;
+        overflow: scroll;
+
+        div {
+          padding: 0.6rem;
+        }
+        .filter {
+          padding: 0.9rem 1.1rem;
+          background: $clr-grey-dark-2;
+          color: $clr-white-off-2;
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+  .ads {
+    .title {
+      margin-top: 0.5rem;
+      padding: 0.5rem;
+      //   background: $clr-white;
+      //   box-shadow: $box-shadow-1;
+    }
+    .ads-wrapper {
+      margin-bottom: 1rem;
+      .ads-section {
+        .ads {
+          padding-top: 0;
+        }
+      }
+    }
+  }
+}
+
+@media screen and(min-width: $screen-lg-min) {
+  header {
+    .hero {
+      .logo-filter {
+        padding: 0;
+        display: block;
+      }
+    }
+  }
+}
+@media screen and(min-width: $screen-lg) {
+  header {
+    min-height: 9.5vh !important;
+    .hero {
+      .logo-filter {
+        display: block;
+      }
+    }
+  }
+}
